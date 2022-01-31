@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sites | Egon Börger</title><link>https://www.egonboerger.org/site/</link><atom:link href="https://www.egonboerger.org/site/index.xml" rel="self" type="application/rss+xml"/><description>Sites</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © 2022 Egon Börger</copyright><image><url>/img/favicon.ico</url><title>Sites</title><link>https://www.egonboerger.org/site/</link></image><item><title>Site Notice</title><link>https://www.egonboerger.org/site/notice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.egonboerger.org/site/notice/</guid><description>&lt;h3 id="contact">Contact&lt;/h3>
+&lt;p>Prof. Dr. Egon Börger&lt;br/>
+&lt;br>
+Dipartimento di Informatica&lt;br/>
+Università di Pisa&lt;br>
+Largo B. Pontecorvo, 3&lt;br>
+56127 Pisa&lt;br>
+Italy&lt;br>
+&lt;br>
+E-Mail: &lt;small> $egon$.$boerger$@$gmail.com$ &lt;/small>&lt;br>
+Website: &lt;small>
+&lt;a href="https://egonboerger.org" target="_blank" rel="noopener">https://egonboerger.org&lt;/a> &lt;/small>&lt;/p>
+&lt;h3 id="notice-of-liability">Notice of liability&lt;/h3>
+&lt;p>Despite careful examination, we assume no liability for external links.
+Responsibility for the content of external links lies with the owners and responsible operators.&lt;/p>
+&lt;h3 id="copyright">Copyright&lt;/h3>
+&lt;p>All contents, texts, graphics, layouts, code or software are Copyright © 2022 by Egon Börger.&lt;/p>
+&lt;p>My publications which are made available here for personal use are presented to ensure timely dissemination of scholarly and technical work. Copyright and all rights therein are retained by authors or by other copyright holders. All persons copying this information are expected to adhere to the terms and constraints invoked by each author&amp;rsquo;s copyright. In most cases, these works may not be reposted without the explicit permission of the copyright holder.&lt;/p>
+&lt;p>In particular for the papers with copyright held by Springer-Verlag Berlin Heidelberg New York see:
+&lt;a href="http://www.springer.de/comp/lncs/index.html" target="_blank" rel="noopener">http://www.springer.de/comp/lncs/index.html&lt;/a>&lt;/p>
+&lt;p>Any usage of material or information available on this website, including the reproduction, sales, alteration and publication is prohibited unless specifically approved by Egon Börger.&lt;/p>
+&lt;h3 id="domain-encryption-and-servers">Domain, Encryption and Servers&lt;/h3>
+&lt;p>The Top-Level Domain (TLD)
+&lt;a href="https://egonboerger.org" target="_blank" rel="noopener">https://egonboerger.org&lt;/a> and all sub-domains are provided by the services from
+&lt;a href="https://namecheap.com" target="_blank" rel="noopener">https://namecheap.com&lt;/a>, the SSL/TLS certificate for encryption is provided by the services from
+&lt;a href="https://letsencrypt.org" target="_blank" rel="noopener">https://letsencrypt.org&lt;/a>, and the (virtual) server infrastructure and hosting of this website is provided by
+&lt;a href="https://pages.github.com" target="_blank" rel="noopener">https://pages.github.com&lt;/a>.&lt;/p>
+&lt;h3 id="cookies-and-analytics">Cookies and Analytics&lt;/h3>
+&lt;p>This website uses no analytics software of any kind.
+The only cookie the website uses and stores is a &lt;code>cookieconsent_status&lt;/code>.
+This cookie consent status is used to store that the page informed you about this page and does only appear the first time you visit this page.&lt;/p></description></item></channel></rss>

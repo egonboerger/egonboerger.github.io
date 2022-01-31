@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+                      "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML><HEAD>
+ <TITLE>Remarks and history for the executables models</TITLE>
+ <link rel=stylesheet type="text/css" href="website.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<hr WIDTH="100%">
+<i>Java and the Java Virtual Machine
+  (<A HREF="http://www.inf.ethz.ch/personal/staerk/">R. St&auml;rk</A>,
+   <A HREF="http://www.tydo.de">J. Schmid</A>,
+   <A HREF="../index.html">E. B&ouml;rger</A>)
+</i>
+<hr WIDTH="100%">
+
+<H1>
+Remarks and history for the executables models
+</H1>
+
+Version 1.03 is provided by the CD-ROM. The current version can
+be downloaded from the <a href="index.html">main page</a>. 
+
+<h3>Remarks for version 1.04</h3>
+
+<dl>
+ <dt>Compile-time constants</dt>
+ <dd>Compile-time constant expressions are not substituted with their
+     corresponding value as it is required in the <a href="http://java.sun.com/docs/books/jls/second_edition/html/execution.doc.html#57946">JLS 2.0</a>. 
+     This might lead to unnecessary class
+     initialization as observed by Kurt Stenzel. In our implementation,
+     only literals are treated as compile-time constants.
+ </dd>
+ <dt>Strings</dt>
+  <dd>Same strings share the same reference in our models. This is
+      not according to the 
+      <a href="http://java.sun.com/docs/books/jls/second_edition/html/lexical.doc.html#101083">JLS 2.0</a> where same string literals share only the
+      same reference (as observed by Kurt Stenzel). However, this
+      is only a problem, if you compare strings with the <tt>==</tt>
+      operator.
+  </dd>
+</dl>
+
+<h3>History</h3>
+
+<dl>
+<dt>May 28, 2001 (version 1.04)
+</dt>
+  <dd>Fixed the following issues:
+   <ul compact>
+    <li>Kurt Stenzel has observed that our 
+     Java machine throws <tt>IndexOutOfBoundsException</tt> instead
+     of <tt>ArrayIndexOutOfBoundsException</tt> if an array index violation
+     occurs. This changed from 
+     <a href="http://java.sun.com/docs/books/jls/first_edition/html/10.doc.html#25566">JLS 1.0</a> to
+      <a href="http://java.sun.com/docs/books/jls/second_edition/html/arrays.doc.html#25566">JLS 2.0</a>.
+    </li>
+    <li>Integrated support for primitive type casts 
+     (<tt>int</tt> to <tt>byte</tt>, e.g.).
+    </li>
+    <li>The method <tt>Thread/run</tt> was called instead of
+      <tt>Runnable/run</tt> when executing a thread created with
+      the constructor <tt>Thread(Runnable)</tt>.
+    </li>
+    <li>Due to a parser error, the variable declarations in an interface
+        might have been in reverse order. This was only a 
+        problem if a variable initializer was depending on a
+        previous variable initializer.
+    </li>
+    <li>Name mismatch between example name in the Jbook and directory name
+        in the executables models. This concerns the directories
+        <tt>Exercise8_2_1</tt>,
+        <tt>Exercise8_2_4</tt>,
+        <tt>Exercise8_4_1</tt>,
+        <tt>Exercise8_4_2</tt>,
+        <tt>Exercise8_4_3</tt>, and
+        <tt>Exercise8_4_4</tt> in <tt>examples/java</tt> and
+         <tt>examples/jvm</tt> where <tt>8_2_x</tt> and <tt>8_4_x</tt>
+         must be replaced by <tt>8_3_x</tt> and <tt>8_2_x</tt>,
+         respectively.
+    </li>
+    <li>To make Exercise 8.2.4 more reasonable, we replaced
+        the <i>while</i> condition <tt>i!=0</tt> by
+        <tt>i&gt;=0</tt>.
+    </li>
+   </ul>
+   After applying the patch, delete the file 
+   <tt>examples/java/Exercise8_2_4/no_out</tt> and the directory
+   <tt>examples/java/Exercise8_4_3</tt>.
+  </dd>
+<dt>May 7, 2001 (version 1.03)</dt>
+  <dd>Support for "for"-statement, post-decrement and 
+      post-increment operators for local variables. This
+      version is on the CD-ROM.</dd>
+<dt>May 3, 2001 (version 1.02)</dt>
+  <dd>Improved performance of Java-GUI. Added some
+      larger examples.</dd>
+<dt>May 2, 2001 (version 1.01)</dt>
+  <dd>Java-ASM and Compiler-ASM support now <tt>a.length</tt> 
+       and <tt>a.clone()</tt> if <tt>a</tt> is an array.
+       Fixed some bugs about array compatibility.</dd>
+</dl>
+
+<A HREF="index.html">Home</A><br><br>
+<HR width="100%">
+<table width="100%" cellpadding=0><tbody>
+<tr>
+  <td align=left valign=top>
+  <a href="http://www.ethz.ch/homepage_en.html">ETH Home</A>
+  </td>
+  <td align=center>May 2001<br>
+    <a href="responsible.html">Responsible</A>
+   </td>
+  <td align=right>
+    <img src="ethlogo-140.gif" alt="ETH Logo"><br>
+  </td>
+</tr>
+</tbody></table>
+</BODY></HTML>

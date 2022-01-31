@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+                      "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML><HEAD>
+ <TITLE>About Jbook</TITLE>
+ <link rel=stylesheet type="text/css" href="website.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<hr WIDTH="100%">
+<i>Java and the Java Virtual Machine
+  (<A HREF="http://www.inf.ethz.ch/personal/staerk/">R. St&auml;rk</A>,
+   <A HREF="http://www.tydo.de">J. Schmid</A>,
+   <A HREF="../index.html">E. B&ouml;rger</A>)
+</i>
+<hr WIDTH="100%">
+
+<H1>
+About Jbook
+</H1>
+The book <b>Java and the Java Virtual Machine - Definition, 
+Verification, Validation</b> provides a high-level description, 
+together with a mathematical
+and an experimental analysis, of Java and of the Java Virtual Machine
+(JVM), including a standard compiler of Java programs to JVM code and
+the security critical bytecode verifier component of the JVM. The
+description is structured into language layers and machine components.
+It comes with a natural executable refinement (written in 
+<a href="http://www.tydo.de/AsmGofer/">AsmGofer</a> and
+provided on CD-ROM) which can be used for testing code. The method
+developed for this purpose, using 
+<a href="http://www.eecs.umich.edu/gasm/">Abstract State Machines</a>
+(ASMs), can be applied to other virtual machines and to other 
+programming languages as well.<p>
+
+The target readers are practitioners&#8212;programmers, implementors,
+standardizers, lecturers, students&#8212;who need for their work a complete,
+correct, and at the same time transparent definition, and an executable
+model, of the language, and of the virtual machine underlying its intended
+implementation. As a consequence, in our abstract and stepwise refined
+models for the language and the machine, we first of all try to directly and
+faithfully reflect, in a complete way, as far as possible without becoming
+inconsistent, and in an unambiguous yet for the human reader graspable way,
+the intuitions and design decisions which are expressed in the reference
+manuals and underly the current implementations of the language and of the
+machine. The rigorous framework we provide allows us to clarify some dark
+corners in the manuals and newly discovered bugs in the implementations.
+Since our framework is implementation independent, it can also be used for
+the specification and evaluation of variations or extensions of the language
+and of the virtual machine, and for the mathematical and the experimental
+study and comparison of present and future Java implementations. In
+particular, our componentwise specifications of Java and the JVM are
+amenable to mathematical and computer-assisted verification as well as to
+the experimental validation of practically important properties of Java
+programs when executed on the JVM. E.g., the analysis in the Jbook brings to
+light in what sense, and under which conditions, legal Java programs can be
+guaranteed to be correctly compiled, to successfully pass the bytecode
+verifier, and to be executed on the JVM correctly, i.e. faithfully
+reflecting the Java semantics and without violating any run-time checks
+(Main Theorem).<p>
+
+The diagram below illustrates  how the three parts of the Jbook are
+connected to piecemeal establish that result. In Part I we define the
+semantics for Java programs, in Part II we define how they are compiled into
+Virtual Machine programs and how the obtained bytecode is executed on the
+<i>trustfulVM</i>, shown to faithfully reflect 
+the Java semantics. In Part III we
+extend this machine to a <i>defensiveVM</i> which at 
+run-time guards the trustful
+execution of every instruction by an appropriate type (etc.) correctness
+check. This check function is used to define a correct notion of bytecode
+type assignment, i.e. one which provably prevents type violations at
+run-time and admits a type assignment for each compiled Java program. Then
+we define how to propagate checked type assignments to single instructions,
+thus obtaining our verifier <i>verifyVM</i> which we can show 
+to compute a bytecode
+type assignment if there is one.  The combination of the 
+<i>trustfulVM</i> and the
+<i>verifyVM</i> in the <i>diligentVM</i> establishes the 
+Main Theorem. The 
+<a href="download/introduction.pdf">introduction</a>
+and the 
+<a href="download/contents.pdf">contents</a>, and of course 
+the Jbook, provide more detailed explanations.<p>
+
+<img src="depgraph.gif" width="682" height="594"
+ alt="Dependency graph"><p>
+
+<A HREF="index.html">Home</A><br><br>
+<HR width="100%">
+<table width="100%" cellpadding=0><tbody>
+<tr>
+  <td align=left valign=top>
+  <a href="http://www.ethz.ch/homepage_en.html">ETH Home</A>
+  </td>
+  <td align=center>March 2001<br>
+    <a href="responsible.html">Responsible</A>
+   </td>
+  <td align=right>
+    <img src="ethlogo-140.gif" alt="ETH Logo"><br>
+  </td>
+</tr>
+</tbody></table>
+</BODY></HTML>

@@ -1,0 +1,298 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<title>Abstract State Machine Tutorial</title>
+</head>
+
+<body bgcolor=white lang=EN-GB link=blue vlink=blue style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<h1 align=center style='text-align:center'>Abstract State Machine Tutorial</h1>
+
+<p class=MsoNormal>The method built around the notion of Abstract State Machine
+(ASM) has been proved to be a scientifically well founded and an industrially
+viable method for the design and analysis of complex systems, which has been applied
+successfully to programming languages, protocols, embedded systems,
+architectures, requirements engineering, etc. The analysis covers both
+verification and validation, using mathematical reasoning (possibly
+theorem-prover-verified or model-checked) or experimental simulation (by
+running the executable models). The tutorial, presented by <a
+href="/">Egon B&ouml;rger</a>, starts from scratch by
+introducing the definition and simple examples of ASMs. Their major scientific and
+industrial applications are surveyed, covering the period from 1990 to 2000.
+Then an outstanding case study is presented, namely the ASM Definition and
+Analysis (Verification and Validation)<span style="mso-spacerun: yes">&nbsp;
+</span>of <a href="jbook">Java and the Java Virtual
+Machine</a> (book by <a href="http://www.inf.ethz.ch/~staerk">Robert St&auml;rk</a>,
+<a href="http://www.tydo.de">Joachim Schmid</a>, and <a
+href="/">Egon B&ouml;rger</a>). The tutorial concludes
+with an introduction, presented by Joachim Schmid, of <a
+href="http://www.tydo.de/AsmGofer">AsmGofer</a>, an ASM programming system
+making ASM models executable by programming the external functions in <a
+href="http://www.haskell.org">Haskell</a>. The AsmGofer introduction includes a
+demo of the executable versions of the Java/JVM ASM models. </p>
+
+<h3>What are Abstract State Machines</h3>
+
+<p class=MsoNormal>The advances in the theory, the tool development, and the
+progressive industrial employment of Abstract State Machines (ASMs) in the 90's
+have turned ASMs into a <b>practical technique for disciplined rigorous system
+engineering</b> in the large. See <a href="http://www.eecs/umich.edu/gasm">www.eecs.umich.edu/gasm</a>
+for the hundreds of papers published on ASMs and their applications, covering
+high-level design and analysis of real-life programming languages and their
+implementations on virtual or real machines (e.g. Java/JVM, C, VHDL, SDL), of
+protocols (e.g. Kermit, Kerberos), embedded system control programs,
+architectures (RISC processors, PVM, APE, ASIC components), requirements
+capture, etc.</p>
+
+<p>Although the definition of ASMs is surprisingly simple (see below), Abstract
+State Machines offer a certain number of theoretically well-founded and
+industrially useful methods that <b>support the entire software development
+cycle.</b> These include rigorous modelling and analysis methods (both
+mathematical verification and experimental validation) for</p>
+
+<p style='margin-left:39.0pt;text-indent:-.5in;mso-list:l1 level1 lfo2;
+tab-stops:list 39.0pt'><![if !supportLists]>(i)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>the <b>requirements</b>, during the early phases of software
+development, supporting their elicitation, specification, inspection, and
+testing through so-called ground models, and </p>
+
+<p style='margin-left:39.0pt;text-indent:-.5in;mso-list:l1 level1 lfo2;
+tab-stops:list 39.0pt'><![if !supportLists]>(ii)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><span style="mso-spacerun: yes">&nbsp;</span>the <b>refinement
+of the high level models</b>, through a design process which reliably connects
+the requirements to the code, supporting a practical documentation discipline
+for code maintenance and reuse.</p>
+
+<p style='margin:0in;margin-bottom:.0001pt'>The operational and abstract
+character of ASMs </p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo5;tab-stops:list .5in'>makes the <b>faithfulness</b>
+     of the definitions with respect to the design intentions checkable by
+     direct inspection (falsifiable in the Popperian sense), </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo5;tab-stops:list .5in'>supports, by stepwise
+     refinements, linking the high-level definition in a transparent way to its
+     <b>implementation</b>, where each refinement step reflects design
+     decisions one wants to be documented for future reference (reuse,
+     maintenance),</li>
+</ul>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo5;
+tab-stops:list .5in'><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:Symbol'>&middot;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>provides a convenient basis for turning the abstract
+definitions into <b>executable models</b> which can be used for validation and
+experiments,</p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo5;
+tab-stops:list .5in'><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:Symbol'>&middot;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>simplifies the (mathematical or machine checked)
+justification of the correctness of the design offering a <b>rigorous</b>
+framework for the <b>analysis of run-time properties</b> at the appropriate
+level of abstraction. </p>
+
+<p>For a non-technical introduction explaining the ASM method, surveying its
+major applications prior to 1999, and comparing it to other major modelling
+approaches in the literature, see <b><a
+href="ftp://ftp.di.unipi.it/pub/Papers/boerger/asmintro.ps">High Level System
+Design and Analysis using Abstract State Machines</a> </b><span
+style="mso-spacerun: yes">&nbsp;</span>.ps (also in<span style="mso-spacerun:
+yes">&nbsp; </span><a
+href="/Papers/Methodology/HighLevelDesign99.PDF">.pdf<span
+style="mso-spacerun: yes">&nbsp; </span>format</a>) (<a
+href="ftp://ftp.di.unipi.it/pub/Papers/boerger/introabstract"> Abstract</a>)</p>
+
+<h3>Definition of Abstract State Machines (<span style='font-size:12.0pt;
+mso-bidi-font-size:13.5pt;font-weight:normal'>Yuri Gurevich 1988</span>) </h3>
+
+<p>A sequential ASM is defined as a set of transition rules of form </p>
+
+<pre><span>&nbsp; </span><b>if</b> Condition <b>then</b> Updates</pre>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>which
+transform first-order structures (the states of the machine), where the guard <i>Condition</i>,
+which has to be satisfied for a rule to be applicable, is a variable free
+first-order formula, and <i>Updates</i> is a finite set of function updates
+(containing only variable free terms) of form </p>
+
+<pre><span style="mso-spacerun: yes">&nbsp; </span>f (t1,...,tn) := t</pre>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>The
+execution of these rules is understood as updating, in the given state and in
+the indicated way, the value of the function <i>f</i> at the indicated
+parameters, leaving everything else unchanged. (This proviso avoids the frame problem
+of declarative approaches.) In every state, all the rules which are applicable
+are simultaneously applied (if the updates are consistent) to produce the next
+state. If desired or useful, declarative features can be built into an ASM by
+integrity constraints and by assumptions on the state, on the environment, and
+on the applicability of rules.</p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>For
+distributed ASMs, the notion of run, which is defined for sequential systems as
+sequence of computation steps of a single agent, is replaced by the notion of a
+partial order of moves of finitely many agents, such that the following three
+conditions are satisfied: (i) co-finiteness: each move has only finitely many
+predecessors, (ii) sequentiality of single agents: the moves of every agent are
+linearly ordered, (iii) coherence: each finite initial segment <i>X</i>
+corresponds to a state <i>s(X)</i>, interpreted as the result of executing all
+moves in <i>X</i>, which for every maximal element <i>x</i> of <i>X</i> is
+obtainable by applying move <i>x</i> in state <i>s(X-{x})</i>. The moves of the
+single agents can be atomic or durative, but for simplicity the preceding
+definition of distributed runs assumes actions to be atomic.</p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>This
+definition of distributed ASMs, which are also called multi-agent ASMs, provides
+a theoretical basis for a coherent global system view for concurrent sequential
+computations of single agents, each executing its own sequential ASM, at its
+own pace and with atomic actions applied in its own local states, including
+input from the environment as monitored functions. The definition guarantees
+that given any finite initial segment of a distributed run, all linearizations
+of this segment, also called interleavings, yield the same global view of the
+state resulting from the computation. In other words, if moves of different
+agents are independent of each other in a given run, they can be scheduled
+relatively to each other in an arbitrary manner, without influencing the
+overall view of the state resulting from the run.</p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>The
+notion of distributed ASM runs comes with no recipe for constructing such runs,
+which in applications may turn out to be a challenging problem. However, it is
+this generality of the concept that provides the freedom to design and analyse
+models for distributed systems without any a priori commitment to special
+synchronization or communication concepts, an important consequence for the
+practice of modelling. This includes the abstraction from any particular
+conditions on the timing of moves of the single agents. The ordering of moves
+reflects only their causal dependency, which is a before-after-relation without
+further details on the precise timing of the moves.</p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>A
+<a href="/Papers/Methodology/AsmDefinition.PDF">textbook
+form of this definition</a> for sequential ASMs can be found in Chapter 2 of <a
+href="/jbook">Jbook</a>.</p>
+
+<h3 style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>What
+is AsmGofer</h3>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt;mso-padding-alt:0in 0in 0in 0in'>
+ <tr>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>AsmGofer is an advanced Abstract State Machine programming
+  system. It is an extension of the functional programming language Gofer which
+  is very similar to <a href="http://www.haskell.org">Haskell</a>. In the
+  AsmGofer introduction we take the well known <i>Game of Life</i> example and
+  make it executable in AsmGofer. This implies defining the static and dynamic
+  semantics. Furthermore we show, how AsmGofer can automatically generate a
+  graphical user interface (GUI) and finally we define a customized GUI in
+  AsmGofer for the game (see the screenshot on the right side).</p>
+  <p>Conway's <i>Game of Life</i> is usually the default screen locker on a Sun
+  workstation. The game consists of a <tt><span style='font-size:10.0pt;
+  font-family:"Courier New"'>n &times; m</span></tt> matrix. Each cell in the matrix
+  is either alive or dead. The rules for survival, death and birth are as
+  follows: </p>
+  <table border=0 cellpadding=0 style='mso-cellspacing:1.5pt;mso-padding-alt:
+   0in 0in 0in 0in'>
+   <tr>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+    </td>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal><i>Survival:</i></p>
+    </td>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal>each living cell with two or three alive neighbors survives
+    until the next generation.</p>
+    </td>
+   </tr>
+   <tr>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+    </td>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal><i>Death:</i></p>
+    </td>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal>each living cell with less than two or more than three
+    neighbors dies.</p>
+    </td>
+   </tr>
+   <tr>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+    </td>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal><i>Birth:</i></p>
+    </td>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal>each dead cell with exactly three living neighbors
+    becomes alive.</p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><o:p></o:p></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><img border=0 width=100 height=138 id="_x0000_i1025"
+  src="gameOfLife.gif" alt="Game of Life"></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>We
+are now going to describe the dynamic behavior of the game in terms of Abstract
+State Machines. This means that we formulate the above three rules in ASMs. The
+first of them is implicitly established by the ASMs semantics, because the
+state changes only if explicitly specified. The second rule (<i>Death</i>)
+corresponds to the following ASM rule <i>letDie</i> which takes two parameters,
+namely <i>cell</i> and <i>n</i>. The argument <i>n</i> is the number of alive
+neighbors and <i>status</i> is a unary dynamic function to store denote whether
+a cell is alive or dead. </p>
+
+<pre><span style="mso-spacerun: yes">&nbsp; </span>letDie(cell, n) =</pre><pre><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span><b>if</b> status(cell)=Alive <b>and</b> (n<2 <b>or</b> n&gt;3) <b>then</b></pre><pre><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>status(cell) := Dead</pre>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>Similarly
+to the <i>letDie</i> rule, we can translate the <i>Birth</i> rule into an ASM
+rule. This is done by the following definition of <i>letLive</i>. The value of
+the dynamic function <i>status</i> for the current <i>cell</i> is changed to <i>Alive</i>
+if the dead cell has exactly three alive neighbors. </p>
+
+<pre><span style="mso-spacerun: yes">&nbsp; </span>letLive(cell, n) =</pre><pre><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span><b>if</b> status(cell)=Dead <b>and</b> n=3 <b>then</b></pre><pre><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>status(cell) := Alive</pre>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>It
+remains to execute both rules in parallel for all cells. This is formalized in
+the following <i>gameOfLife</i> definition where we use a <i>forall</i> rule to
+simultaneously execute the above two ASM rules for every cell. </p>
+
+<pre><span style="mso-spacerun: yes">&nbsp; </span>gameOfLife =</pre><pre><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span><b>forall</b> cell <b>in</b> allCells <b>do</b></pre><pre><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>letDie(cell, numberOfAliveNeighbors(cell))</pre><pre><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>letLive(cell, numberOAlivefNeighbors(cell))</pre>
+
+<div class=MsoNormal align=center style='margin-top:5.0pt;mso-margin-bottom-alt:
+auto;text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+
+<address style='margin-top:5.0pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><a
+href="mailto:egon.boerger@gmail.com">Egon B&ouml;rger</a></address>
+
+</div>
+
+</body>
+
+</html>

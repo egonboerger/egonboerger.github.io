@@ -1,0 +1,199 @@
+<!Comment>
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="/prologwam_files/filelist.xml">
+<title>ISO-PROLOG and the Warren Abstract Machine</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Egon Boerger</o:Author>
+  <o:LastAuthor>Egon Boerger</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>2</o:TotalTime>
+  <o:Created>2001-04-23T09:58:00Z</o:Created>
+  <o:LastSaved>2001-04-23T10:00:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>467</o:Words>
+  <o:Characters>2664</o:Characters>
+  <o:Company>Dipartimento di Informatica</o:Company>
+  <o:Lines>22</o:Lines>
+  <o:Paragraphs>5</o:Paragraphs>
+  <o:CharactersWithSpaces>3271</o:CharactersWithSpaces>
+  <o:Version>9.2720</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+h2
+	{color:black;}
+a:link, span.MsoHyperlink
+	{color:#CF0000;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#0000BF;
+	text-decoration:underline;
+	text-underline:single;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:131871070;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1216394052 -670011220 -13983222 66615816 375054952 848225900 957622236 2001922716 526309520 -2033555070;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor="#f0f0f0" lang=EN-GB link="#cf0000" vlink="#0000bf"
+style='tab-interval:.5in' alink="#FFFF00">
+
+<div class=Section1>
+
+<h2>ISO-PROLOG and the Warren Abstract Machine</h2>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:12.0pt;
+     mso-list:l0 level1 lfo1;tab-stops:list .5in'>
+ <a href="/Papers/LogicPgg/surveyifip.pdf">History and
+     Survey</a> of ASM modelling of logic programming languages using ASMs</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:12.0pt;
+     mso-list:l0 level1 lfo1;tab-stops:list .5in'>Boerger's original ASM models for 
+ Prolog (1990-92) became the <a href="/Papers/LogicPgg/prolog.pdf">
+ ISO-Prolog</a>&nbsp; model: SCP 24 (1995) 249--286</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:12.0pt;
+     mso-list:l0 level1 lfo1;tab-stops:list .5in'>Modelling and analysing 
+ <a href="/Papers/LogicPgg/bagof.pdf">Set
+     Predicates </a>in ISO-Prolog</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:12.0pt;
+     mso-list:l0 level1 lfo1;tab-stops:list .5in'>Modelling and analysing 
+ Database Views for Prolog: Springer LNCS 528 (1991) 147-185</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo1;tab-stops:list .5in'>Modelling the 
+ <a href="/Papers/LogicPgg/wamFeb94.pdf">WAM </a>and a
+     proven to be correct general scheme for constructing compilers from Prolog
+     to Warren Abstract Machine code.<br>
+     <br>
+     For achieving this goal a <a href="/Papers/Methodology/RefineFACS.pdf">Refinement Method</a>&nbsp; 
+ has been introduced into ASM which takes care of orthogonal components of the 
+ WAM and thus makes the specification as well as the correctness proof modular 
+ and extendible. Examples of such modular extensions of the WAM by ASM 
+ refinements are the following:</li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:1.0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<ul type=disc>
+ <ul type=circle>
+  <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+      auto;mso-list:l0 level2 lfo1;tab-stops:list 1.0in'>IBM's
+  <a href="/Papers/LogicPgg/pam1.pdf">Protos
+      Abstract Machine </a>&nbsp; (IBM Germany) where Prolog and the WAM are refined by 
+  abstract types (see
+  <a href="https://www.fernuni-hagen.de/wbs/research/papers/res/BeierleBoerger96_Journal_FAC.abstract.html">
+  abstract</a>)</li>
+  <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+      auto;mso-list:l0 level2 lfo1;tab-stops:list 1.0in'>full 
+  <a href="/Papers/LogicPgg/pam2.pdf">PAM</a> where the abstract types are refined by
+      polymorphic order-sorted types, as they appear in Protos-L, and
+      implemented in the WAM extension (see
+  <a href="https://www.fernuni-hagen.de/wbs/research/papers/res/BeierleBoerger96_Journal_FAC_PartII.abstract.html">
+  abstract</a>)</li>
+  <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+      auto;mso-list:l0 level2 lfo1;tab-stops:list 1.0in'>IBM's 
+  <a href="/Papers/LogicPgg/clam.pdf">Constraint Logic
+      Arithmetical Machine </a>CLAM (IBM Yorktown Heights) 
+  implementing the constraint logic programming language CLP(R)</li>
+  <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+      auto;mso-list:l0 level2 lfo1;tab-stops:list 1.0in'>Araujo's 
+  <a href="https://www.jucs.org/jucs_3_5/correctness_proof">Prolog Distributed Processor</a></li>
+  <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+      auto;mso-list:l0 level2 lfo1;tab-stops:list 1.0in'>
+  <a href="https://www.jucs.org/jucs_3_4/a_structured_presentation_of">Kwon's machine</a> 
+  which permits procedure definitions to be given a scope </li>
+ </ul>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.5in'><br>
+<br>
+For machine (KIV, ISABELLE) checked versions of the PROLOG-to-WAM correctness proof
+see the work by Ahrendt, Pusch, Schellhorn cited in the 1999 
+<a href="/Papers/Methodology/HighLevelDesign99.PDF">ASM survey </a>, in
+particular 
+<a href="https://www.informatik.uni-augsburg.de/lehrstuehle/swt/se/publications/1999-asm/">Schellhorn 
+</a>'s
+PhD thesis. <br>
+<br>
+For an application of the refinement method to imperative or object-oriented
+languages, with parallelism and nondeterminism, see the papers on modelling,
+and proving the correctness of the compilation, of
+<a href="/Papers/Architecture/Occam.pdf">Occam </a>to 
+<a href="/Papers/Architecture/Transputer.pdf">Transputer</a>
+Code and of <a href="/jbook">Java to Java Virtual
+Machine</a> Code. </p>
+
+</div>
+
+</body>
+
+</html>
