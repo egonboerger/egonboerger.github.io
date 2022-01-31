@@ -1,0 +1,360 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+                      "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML><HEAD>
+ <TITLE>Errata in Jbook</TITLE>
+ <link rel=stylesheet type="text/css" href="website.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<hr WIDTH="100%">
+<i>Java and the Java Virtual Machine
+  (<A HREF="http://www.inf.ethz.ch/personal/staerk/">R. St&auml;rk</A>,
+   <A HREF="http://www.tydo.de">J. Schmid</A>,
+   <A HREF="../index.html">E. B&ouml;rger</A>)
+</i>
+<hr WIDTH="100%">
+
+<H1>
+Errata and remarks for Jbook
+</H1>
+
+Remarks and corrections are listed by reverse chronological order. Take a
+look at <a href="errata.html">this</a> page for updates listed
+by increasing page numbers.
+
+<table><tbody>
+ <tr>
+   <th align=Left>Date</th>
+   <th align=Left>Page</th>
+   <th align=Left>Description</th>
+  </tr>
+ <tr>
+  <td valign=top>08/27/01</td>
+  <td valign=top>52</td>
+  <td><b>Constraint 4.1.6</b> (item 9):
+      The body of the method is the semicolon if, and only if,
+      the method is <tt>abstract</tt> or <tt>native</tt>.
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>08/27/01</td>
+  <td valign=top>114</td>
+  <td><b>Lemma 8.1.2</b>:
+      Replace <i>a</i> by <i>alpha</i>.
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>08/27/01</td>
+  <td valign=top>140</td>
+  <td>Fifth paragraph:
+      We denote by <i>JVMS(p,ws)</i> the sequence of words
+      corresponding to the application of the
+      primitive operator <i>p</i> to the argument
+      sequence <i>ws</i> according to the
+      <a href="http://java.sun.com/docs/books/vmspec/index.html">JVM 
+      specification</a>.
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>08/27/01</td>
+  <td valign=top>152</td>
+  <td><b>Figure 10.2</b>:
+     Replace <i>pushFrame(c/</i><tt>&lt;clinit&gt;()</tt><i>)</i> by
+        <i>pushFrame(c/</i><tt>&lt;clinit&gt;()</tt><i>,())</i>.
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>08/24/01</td>
+  <td valign=top>162</td>
+  <td>Definition of <i>execVM<sub>E</sub></i> (case <i>Checkcast</i>):
+      Replace <i>0</i> by <i>null</i>.
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>08/24/01</td>
+  <td valign=top>274</td>
+  <td>line 6: Replace seven by eight. 
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>07/30/01</td>
+  <td valign=top>229</td>
+  <td><b>Why sets of reference types?</b><br>
+    <i>Replace:</i><br>
+    Sun's JDK 1.2 verifier does not reject the bytecode. Instead it
+    inserts an additional run-time check for methods with arguments of
+    interface type. Hence, the compatibility of method arguments has to be
+    checked at run-time in contradiction to the 
+    <a href="http://java.sun.com/docs/books/vmspec/index.html">JVM 
+    specification</a><br>
+    <i>by:</i><br>
+    Sun's JDK 1.2 verifier does not reject the bytecode. Instead it inserts
+    an additional run-time check for invocations of interface methods.
+    According to the 
+    <a href="http://java.sun.com/docs/books/vmspec/index.html">JVM 
+    specification</a> an
+    <tt>IncompatibleClassChangeError</tt> is thrown at run-time, if the
+    target object of an interface method invocation does not implement the
+    interface.
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>07/30/01</td>
+  <td valign=top>145</td>
+  <td>Exchange <i>stm<sub>1</sub></i> and
+      <i>stm<sub>2</sub></i> in:<br>
+ If the result of the test is <i>True</i> (different from integer <i>0</i>), 
+ then control jumps to the code of <i>stm<sub>2</sub></i>. 
+ Otherwise, <i>stm<sub>1</sub></i> is executed.
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>07/04/01</td>
+  <td valign=top>236</td>
+  <td>Line 3 in first paragraph: Replace wich by which.
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>07/04/01</td>
+  <td valign=top>267</td>
+  <td>Proof of <b>Theorem 16.5.1</b>:
+      Replace <i>succs</i> by <i>succ</i>.
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>07/04/01</td>
+  <td valign=top>268</td>
+  <td>Proof of <b>Theorem 16.5.1</b>:
+      Replace <i>succs</i> by <i>succ</i>.
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>07/03/01</td>
+  <td valign=top>284</td>
+  <td>Definition of <i>propagateVM<sub>E</sub></i> (case <i>Jsr(s)</i>): Replace
+      <b>forall</b> by <b>forall seq</b> (execute the
+      rules sequentially).
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>07/03/01</td>
+  <td valign=top>276</td>
+  <td>Definition of <i>verifyScheme<sub>I</sub></i>: Execute
+      <i>changed(pc) := undef</i> and
+      <i>propagateVM(code,succ,pc)</i> sequentially.
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>07/03/01</td>
+  <td valign=top>276</td>
+  <td>Definition of <i>propagateVM<sub>I</sub></i>: Replace
+      <b>forall</b> by <b>forall-seq</b> (execute the rules
+      sequentially).
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>06/25/01</td>
+  <td valign=top>263</td>
+  <td>Proof of <b>Corollay 16.5.1</b> (it should be):
+      By Lemma 16.5.10, end<sub>gamma</sub> is reachable from
+      beg<sub>gamma</sub> via a path ...
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>06/25/01</td>
+  <td valign=top>271</td>
+  <td><b>Exercise 16.5.2</b>: Replace <i>regT<sub>i</sub></i> by
+      <i>opdT<sub>i</sub></i>.
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>06/20/01</td>
+  <td valign=top>256</td>
+  <td>Line 9 in second paragraph:
+       Replace V(alpha) = <i>InInit</i> by V(alpha) = [<i>InInit</i>].<br>
+       Remark: V(alpha) is a list (by definition).
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>06/20/01</td>
+  <td valign=top>257</td>
+  <td><b>Figure 16.23</b>, S(<i>exp</i><tt>;</tt>): 
+       Replace [V(beta)] by V(beta).
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>06/20/01</td>
+  <td valign=top>259</td>
+  <td><b>Figure 16.27</b>, S(<tt>throw</tt> <i>exp</i>): 
+       Replace [V(beta)] by V(beta).
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>06/20/01</td>
+  <td valign=top>260</td>
+  <td><b>Figure 16.28</b>, S(<tt>return</tt> <i>exp</i>): 
+       Replace E(<i>exp</i>) and [V(beta)] by
+       E(<i>exp</i>,[ ]) and V(beta), respectively.
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>06/15/01</td>
+  <td valign=top>210</td>
+  <td>Definition of <i>defensiveScheme<sub>I</sub></i>: Replace <i>instr</i> by <i>code(pc)</i>. 
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>06/15/01</td>
+  <td valign=top>212</td>
+  <td>Definition of <i>check<sub>I</sub></i>: Parameter <i>pc</i> not necessary. 
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>06/15/01</td>
+  <td valign=top>214</td>
+  <td>Definition of <i>check<sub>C</sub></i>: Parameter <i>pc</i> not necessary. 
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>06/15/01</td>
+  <td valign=top>218</td>
+  <td>Definition of <i>check<sub>O</sub></i>: Parameter <i>pc</i> not necessary. 
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>06/15/01</td>
+  <td valign=top>220</td>
+  <td>Definition of <i>check<sub>E</sub></i>: Parameter <i>pc</i> not necessary. 
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>06/15/01</td>
+  <td valign=top>236</td>
+  <td>Line before <b>Lemma 16.2.1</b>: Parameter <i>pc</i> for 
+      <i>check<sub>E</sub></i> not necessary. 
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>06/15/01</td>
+  <td valign=top>240</td>
+  <td>Line 8: Parameter <i>pc</i> for <i>check<sub>E</sub></i> not necessary. 
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>06/15/01</td>
+  <td valign=top>276</td>
+  <td>Definition of <i>verifyScheme<sub>I</sub></i>: Parameter <i>pc</i> for 
+      <i>check</i> not necessary. 
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>06/15/01</td>
+  <td valign=top>278</td>
+  <td>Second paragraph in proof for <b>Theorem 17.1.2</b>:
+      Parameter <i>pc</i> for <i>check</i> not necessary. 
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>06/12/01</td>
+  <td valign=top>228</td>
+  <td>Line 1: Replace <i>Throw</i> by <i>Athrow</i>. 
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>06/12/01</td>
+  <td valign=top>237</td>
+  <td><b>Definition 16.3.1</b>: Replace <i>Throw</i> by <i>Athrow</i>. 
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>06/12/01</td>
+  <td valign=top>239</td>
+  <td>T7 e: Font of the second <i>l</i> should be equal to
+      the first <i>l</i> (TeX symbol <tt>\ell</tt>). 
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>05/31/01</td>
+  <td valign=top>129</td>
+  <td><b>Theorem 8.4.1</b> (Java is type safe): 
+      The invariant (<b>def5</b>) has to be changed to<br>
+      If <i>restbody*/</i>alpha<i> = Break(l)</i>, then <i>break(</i>alpha<i>,l)</i>
+      is contained in <i>dom(locals*)</i>.
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>05/25/01</td>
+  <td valign=top>115</td>
+  <td><b>Definition 8.1.8</b> (item 4): 
+      Replace <i>lookup(A,</i><tt>Thread</tt>/<tt>run()</tt><i>)=C</i>
+      by <i>lookup(A,</i><tt>Runnable</tt>/<tt>run()</tt><i>)=C</i>.
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>05/25/01</td>
+  <td valign=top>120</td>
+  <td><b>Exercise 8.2.4</b>: By replacing the <i>while</i> condition
+      <tt>i!=0</tt> by <tt>i&gt;=0</tt>, we make the exercise more
+      reasonable.
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>05/25/01</td>
+  <td valign=top>122</td>
+  <td><b>Section 8.3</b>: Replace <i>type(</i>alpha<i>)</i> by 
+      T(alpha). [4 times].
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>05/25/01</td>
+  <td valign=top>130</td>
+  <td><b>(chain 1)</b>: 
+      Replace <i>type(</i>beta<i>)</i> by T(beta).
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>05/23/01</td>
+  <td valign=top>119</td>
+  <td><b>Definition 8.2.3</b> (item 2): Replace <tt>throws</tt> <i>exp</i> by
+      <tt>throw</tt> <i>exp</i>.
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>05/18/01</td>
+  <td valign=top>103</td>
+  <td>In the definition of <i>start(ref)</i>, the expression
+      <i>lookup(classOf(q),</i><tt>Thread/run()</tt><i>)/</i><tt>run()</tt>
+      should be replaced by
+      <i>lookup(classOf(q),</i><tt>Runnable/run()</tt><i>)/</i><tt>run()</tt>.
+  </td>
+ </tr>
+ <tr>
+  <td valign=top>05/10/01</td>
+  <td valign=top>332</td>
+  <td>By replacing the two occurrences of 
+      <tt>IndexOutOfBoundsException</tt> by 
+      <tt>ArrayIndexOutOfBoundsException</tt> we can reflect
+      the change from 
+      <a href="http://java.sun.com/docs/books/jls/first_edition/html/10.doc.html#25566">JLS 1.0</a> to
+      <a href="http://java.sun.com/docs/books/jls/second_edition/html/arrays.doc.html#25566">JLS 2.0</a>.
+  </td>
+ </tr>
+</tbody></table><br>
+
+
+<A HREF="index.html">Home</A><br><br>
+<HR width="100%">
+<table width="100%" cellpadding=0><tbody>
+<tr>
+  <td align=left valign=top>
+  <a href="http://www.ethz.ch/homepage_en.html">ETH Home</A>
+  </td>
+  <td align=center>August 2001<br>
+    <a href="responsible.html">Responsible</A>
+   </td>
+  <td align=right>
+    <img src="ethlogo-140.gif" alt="ETH Logo"><br>
+  </td>
+</tr>
+</tbody></table>
+</BODY></HTML>

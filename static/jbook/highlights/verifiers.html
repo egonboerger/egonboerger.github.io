@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+                      "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML><HEAD>
+ <TITLE>Bugs in Verifiers</TITLE>
+ <link rel=stylesheet type="text/css" href="../website.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<hr WIDTH="100%">
+<i>Java and the Java Virtual Machine
+  (<A HREF="http://www.inf.ethz.ch/personal/staerk/">R. St&auml;rk</A>,
+   <A HREF="http://www.tydo.de">J. Schmid</A>,
+   <A HREF="../../index.html">E. B&ouml;rger</A>)
+</i>
+<hr WIDTH="100%">
+
+<H1>
+Bugs in Verifiers
+</H1>
+
+The following examples are taken from Jbook. Press the <tt>verify</tt>
+button to verify the corresponding class by your browser. Move the
+mouse after pressing the button in case there is no output. Note
+that some browsers crash while verifying some of these examples.
+<hr width="100%">
+Figure 16.7 is a valid Java program. JDK 1.3 rejects the bytecode.
+IE 5.5 crashes while verifying the class.
+<table WIDTH="100%"><tr><td BGCOLOR="#FFFFE0" class="xpmcode">
+<pre>
+public class Figure16_7 {
+  public Figure16_7() { m(true); }
+
+  static void m(boolean b) {
+   try {
+     try { if (b) return; }
+     finally {
+       try { if(b) return; }
+       finally { if (b) return; }
+     }
+   } finally { if (b) return; }
+  }
+}
+</pre></td></tr></table>
+<applet code="http://pages.di.unipi.it/borger/jbook/highlights/LoaderButton" codebase="." alt="Figure 16.7" width="100%" height=120>
+       <param name=load     value="Figure16_7">
+</applet><br><br>
+<hr width="100%">
+Figure 16.18 shows some strange arrangement of subroutines. IE 5.0 and
+IE 5.5 crash
+while verifying this bytecode. This bytecode maybe accepted or
+rejected (usually it is rejected).
+<table WIDTH="100%"><tr><td BGCOLOR="#FFFFE0" class="xpmcode">
+<pre>
+   jsr S
+   jsr L
+   return
+L:
+   astore l
+   jsr S
+   ret l
+S:
+   astore s
+   ret s
+</pre></td></tr></table>
+<applet code="http://pages.di.unipi.it/borger/jbook/highlights/LoaderButton" codebase="." alt="Figure 16.18" width="100%" height=120>
+       <param name=load     value="Figure16_18">
+</applet><br><br>
+<hr width="100%">
+Example C.7.1 is a valid Java program. JDK 1.3 rejects the bytecode.
+However, the bytecode should be accepted and a <tt>NullPointerException</tt>
+should be raised.
+<table WIDTH="100%"><tr><td BGCOLOR="#FFFFE0" class="xpmcode">
+<pre>
+public class ExampleC_7_1 {
+  public ExampleC_7_1() {
+    int[][] a = null;
+    a[0] = new int[0];
+  }
+}
+</pre></td></tr></table>
+<applet code="http://pages.di.unipi.it/borger/jbook/highlights/LoaderButton" codebase="." alt="Example C.7.1" width="100%" height=120>
+       <param name=load     value="ExampleC_7_1">
+</applet><br><br>
+
+
+
+
+<A HREF="../index.html">Home</A><br><br>
+<HR width="100%">
+<table width="100%" cellpadding=0><tbody>
+<tr>
+  <td align=left valign=top>
+  <a href="http://www.ethz.ch/homepage_en.html">ETH Home</A>
+  </td>
+  <td align=center>March 2001<br>
+    <a href="../responsible.html">Responsible</A>
+   </td>
+  <td align=right>
+    <img src="../ethlogo-140.gif" alt="ETH Logo"><br>
+  </td>
+</tr>
+</tbody></table>
+</BODY></HTML>

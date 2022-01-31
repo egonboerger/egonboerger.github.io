@@ -1,2 +1,0 @@
-# egonboerger.github.io
-website

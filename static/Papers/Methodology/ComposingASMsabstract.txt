@@ -1,0 +1,31 @@
+Egon Boerger
+
+Composition and Submachine Concepts for Sequential ASMs
+
+Three composition and structuring concepts are presented which reflect
+frequently used refinements of ASMs and integrate standard structuring
+constructs into the global state based parallel ASM view of
+computations.  First we provide an operator which combines the atomic
+update view of ASMs with sequential machine execution and naturally
+incorporates iteration constructs into ASMs. For structuring large
+machines we define their parameterization, leading to a notion of
+possibly recursive submachine calls which sticks to the bare logical
+minimum needed for sequential (non distributed) ASMs, namely
+consistency of simultaneous machine operations. For encapsulation and
+state hiding we provide ASMs with local state, return values and error
+handling.
+
+Some of these structuring constructs have been implemented by Joachim
+Schmid in ASMGofer. We provide also a proof-theoretic definition which
+supports the use of common structured proof principles for proving
+properties for complex machines in terms of properties of their
+components.
+
+The paper (jointly written with Joachim Schmid) did appear 
+in P. Clote and H. Schwichtenberg (Eds): 
+Computer Science Logic (Gurevich Festschrift). 
+Proc. 14th International Workshop CSL. Springer
+LNCS 1862, 2000, pp.41-60.
+
+
+

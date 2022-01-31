@@ -1,0 +1,4 @@
+{{/* Check for valid site config. */}}
+{{ if not site.Params.favicon }}{{errorf "'favicon' field missing from `params.toml`!"}}{{end}}
+
+{{ return site.Params.favicon }}

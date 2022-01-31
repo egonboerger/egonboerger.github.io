@@ -1,0 +1,77 @@
+title = "Egon Börger"
+
+# baseurl = "/"
+baseurl = "https://www.egonboerger.org/"
+
+copyright = "Copyright &copy; {year} Egon Börger"
+
+theme = "academic"
+
+defaultContentLanguage = "en"
+
+hasCJKLanguage = false  # `true` for Chinese/Japanese/Korean languages
+
+# avoids the generation of tags and categorization pages
+# disableKinds = ["taxonomy", "term"]
+
+defaultContentLanguageInSubdir = false
+
+removePathAccents = true  # Workaround for https://github.com/gohugoio/hugo/issues/5687
+
+summaryLength = 30
+
+paginate = 10
+
+enableEmoji = true
+
+footnotereturnlinkcontents = "<sup>^</sup>"
+
+ignoreFiles = [ "\\.org$", "\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
+publishDir = "../obj/html"
+
+resourceDir = "../obj"
+
+[outputs]
+  home = [ "HTML", "RSS", "JSON", "WebAppManifest" ]
+  section = [ "HTML", "RSS" ]
+
+[mediaTypes."application/manifest+json"]
+  suffixes = ["webmanifest"]
+
+[outputFormats.WebAppManifest]
+  mediaType = "application/manifest+json"
+  rel = "manifest"
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    codeFences = false
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+
+[imaging]
+  resampleFilter = "lanczos"
+  quality = 90
+  anchor = "smart"  # or 'center'
+
+[caches]
+[caches.getjson]
+dir = ":cacheDir/:project"
+maxAge = -1
+[caches.getcsv]
+dir = ":cacheDir/:project"
+maxAge = -1
+[caches.images]
+dir = ":resourceDir/images"
+maxAge = -1
+[caches.assets]
+dir = ":resourceDir/assets"
+maxAge = -1
+[caches.modules]
+dir = ":cacheDir/modules"
+maxAge = -1

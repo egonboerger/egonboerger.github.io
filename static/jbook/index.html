@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+                      "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+ <meta name="description" content="Java and the Java Virtual Machine. Jbook Homepage">
+ <meta name="keywords" content="Java, JVM, Java Virtual Machine, AsmGofer, Definition, Verification, Validiation, Bugs, Correct, executable, specification, model, ASM">
+ <meta name="author" content="R. Staerk, J. Schmid, E. Boerger">
+ <TITLE>Jbook Home Page, Java and the Java Virtual Machine</TITLE>
+ <link rel=stylesheet type="text/css" href="website.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<center><h1>Jbook Home Page</h1>
+  July 2001<img src="http://pages.di.unipi.it/borger/jbook/cover.php" alt="empty" height=1 width=1>
+</center>
+<HR>
+
+<table><tbody>
+  <tr><td><img src="jbook.jpg" 
+               alt="Jbook cover" 
+               height=249 
+               width=165></td>
+      <td></td>
+      <td valign=top>
+        <a href="http://www.springer.de/cgi-bin/search_book.pl?isbn=3-540-42088-6">Java and the Java Virtual Machine
+          &#8212; Definition, Verification, Validation</A><p>
+The book provides a high-level description, together with a mathematical
+and an experimental analysis, of Java and of the Java Virtual Machine
+(JVM), including a standard compiler of Java programs to JVM code and
+the security critical bytecode verifier component of the JVM. The
+description is structured into language layers and machine components.
+It comes with a natural executable refinement (written in 
+<a href="http://www.tydo.de/AsmGofer/">AsmGofer</a> and
+provided on CD-ROM) which can be used for testing code. The method
+developed for this purpose, using 
+<a href="http://www.eecs.umich.edu/gasm/">Abstract State Machines</a>
+(ASMs), can be applied to other virtual machines and to other 
+programming languages as well.<p>
+The Jbook <i>gives the most comprehensive and consistent formal
+account of the combination of Java and the JVM</i>.
+(Pieter Hartel and Luc Moreau in 
+<a href="http://www.ub.utwente.nl/webdocs/ctit/1/00000050.pdf">Formalizing
+the Safety of Java, the Java Virtual Machine and Java Card</a>,
+ACM Computing Surveys, 33(4):517-558, 2001. Section 6.2, page 540.)<p>
+The target readers are practitioners&#8212;programmers, implementors,
+standardizers, lecturers, students&#8212;who need for their work a complete,
+and at the same time transparent definition, and an executable model, of
+the language, and of the virtual machine underlying its intended
+implementation.
+</td></tr>
+</tbody></table>
+<br clear=all>
+
+The authors of Jbook
+<table cellpadding=0><tbody>
+  <tr>
+   <td>&nbsp;R.Staerk</td>
+   <td>&nbsp;(Theoretische Informatik, ETH Z&uuml;rich)</td></tr>
+  <tr>
+   <td>J.Schmid</td>
+   <td>(Siemens Corporate Technology, Munich) </td></tr>
+  <tr>
+   <td><a href="../index.html">E. B&ouml;rger</a></td>
+   <td>(Dipartimento di Informatica Universit&agrave; di Pisa)</td>
+  </tr>
+</tbody></table><p>
+
+The book can be ordered from
+<a href="http://www.springer.de/cgi-bin/search_book.pl?isbn=3-540-42088-6">Springer (Germany)</a>,
+<a href="http://www.springer-ny.com/detail.tpl?isbn=3540420886">Springer
+(New York)</a>,
+<a href="http://www.amazon.com/exec/obidos/ASIN/3540420886/">Amazon (United States)</a>,
+<a href="http://www.amazon.de/exec/obidos/ASIN/3540420886/">Amazon (Germany)</a>,
+<a href="http://www.amazon.co.uk/exec/obidos/ASIN/3540420886/">Amazon (United Kingdom)</a>,
+<a href="http://shop.barnesandnoble.com/bookSearch/isbnInquiry.asp?isbn=3540420886">Barnes &amp; Nobles (USA)</a>.
+
+<h3>Documentation</h3>
+<dl>
+<dt><a href="about.html">About Jbook</A></dt>
+ <dd>Describes what the Jbook offers for which group of readers.
+ </dd>
+<dt><a href="history.html">What's New</A></dt>
+ <dd>Describes changes of the web pages.
+ </dd>
+<dt><a href="faq.html">Jbook FAQ</A></dt>
+ <dd>Gives email feedback on Jbook and tries to clarify 
+     misunderstandings.
+ </dd>
+<dt><a href="updates.html">Jbook Updates</A></dt>
+  <dd>Gives information about known errata and errors in the Jbook
+      and in the executable models. Describes how you can
+      communicate to the authors should you discover a new error.
+  </dd>
+</dl>
+
+<h3>Some highlights of Jbook</h3>
+
+<dl>
+  <dt>Definition</dt>
+     <dd><a href="download/nutshell.pdf">Java and the JVM in a Nutshell</A>
+         lists 
+         the main rules and functions which constitute the ASM 
+         models of Java and the JVM. These rules appear in the
+         appendix of Jbook.</dd>
+  <dt>Verification<dt>
+   <dd>We analyse and prove the following fundamental property of JVM
+       verification and execution of compiled Java programs:<p>
+       <i>
+       Under explicitly stated conditions, any well-formed and well-typed 
+       Java program, when correctly compiled, 
+       passes the verifier and is executed on the JVM. It executes 
+       without violating any run-time checks, and is correct with 
+       respect to the expected behavior as defined by the Java machine.</i>
+       <p>
+       The proof for this fundamental property uses several other 
+       theorems. Some of them are described on
+       <a href="highlights/proofs.html">this</a> page.
+       </dd>
+  <dt>Validation</dt>
+    <dd>The book comes with an electronic version on CD-ROM which 
+        includes the executable versions of the models, with examples 
+        and exercises described in the book. It comes with a
+        setup program <a href="download/Jbook-1.04.exe">Jbook-1.04.exe</a>
+        for Microsoft Windows based platforms and 
+        <a href="download/machines-1.04.tar.gz">precompiled binaries</a>
+        for Linux, Solaris Sparc, and cygwin under
+        Microsoft Windows. In addition 
+        <a href="download/AsmGofer.tar.gz">AsmGofer.tar.gz</a> contains  
+        the source code of <a href="http://www.tydo.de/AsmGofer/">AsmGofer</a>,
+        which is the tool used to execute the
+        models in the book. You will need the sources only in case you have to
+        compile your own binary of AsmGofer. The setup program 
+        <a href="download/Jbook-1.04.exe">Jbook-1.04.exe</a> already contains the 
+        binary for Microsoft Windows.
+    </dd>
+    <dd><a href="highlights/verifier.html">Some legal Java
+        programs are not bytecode verifiable</a></dd>
+    <dd><a href="highlights/verifiers.html">Bugs in Verifiers</A></dd>
+</dl>
+
+The <a href="download/introduction.pdf">introduction</A> and the
+<a href="download/contents.pdf">contents</A> of Jbook give a
+more detailed impression about the topics treated by the book.
+
+<h3>Material about Jbook</h3>
+
+<i>Copyright Notice.</i> The work below is copyright by the respective authors
+who reserve all rights to their work. Fair use of the material is
+welcome, including using and making the material available for
+lecturing. In doing this the source and the authors should be mentioned,
+when passing off the material this copyright notice should be added. In
+particular, it is not fair to pass off any material 
+made publicly available here as your own work.<p>
+
+Course <a href="eth37474/index.html">Java and the JVM: Definition and Verification</a>
+at ETH Z&uuml;rich by 
+      <a href="http://www.inf.ethz.ch/~staerk/">Robert St&auml;rk</a>.<p>
+<a href="material/SurveyJava.pdf">Survey Lecture 
+on Modeling and Analysis of Java</a> 
+(PowerPoint animation <a href="material/SurveyJava.ppt">SurveyJava.ppt</a>)
+by
+<a href="../index.html">Egon B&ouml;rger</a>.<p>
+
+<a href="material/SurveyJVM.pdf">Survey Lecture 
+on Modeling and Analysis of JVM</a> 
+(PowerPoint animation <a href="material/SurveyJVM.ppt">SurveyJVM.ppt</a>)
+by
+<a href="../index.html">Egon B&ouml;rger</a>.<p>
+
+If you like the book, you are welcome to submit your own teaching or
+other material (slides, exercises, etc.) on the book as addition to this
+site.
+
+<h3>Downloading Jbook</h3>
+
+<dl>
+ <dt><a href="download/Jbook-1.04.exe">Jbook-1.04.exe</A></dt>
+  <dd>
+    Setup program for Microsoft Windows based
+    platforms. The program contains the executable models
+    of the Jbook together with examples and exercises
+    described in the book. 
+  </dd>
+ <dt><a href="download/machines-1.04.zip">machines-1.04.zip</A></dt>
+  <dd>
+    Zip archive for the executable models of
+    the Jbook together with examples and exercises 
+    described in the book. The zip file contains 
+    binaries for Microsoft Windows.
+  </dd>
+ <dt><a href="download/machines-1.04.tar.gz">machines-1.04.tar.gz</A></dt>
+  <dd>
+    Compressed tar archive of the executable models of
+    the Jbook together with examples and exercises 
+    described in the book. The archive contains precompiled
+    binaries for Linux, Solaris Sparc,
+    and cygwin under Microsoft Windows. 
+  </dd>
+ <dt><a href="download/AsmGofer.tar.gz">AsmGofer.tar.gz</A></dt>
+  <dd>The source code of <a href="http://www.tydo.de/AsmGofer">AsmGofer</A>.
+      The tool is used to execute the models in the Jbook. You will
+      need the sources only in case you have to compile your
+      own binary of AsmGofer. The setup program
+      <a href="download/Jbook-1.04.exe">Jbook-1.04.exe</a> already
+      contains the binary for Microsoft Windows.
+  </dd>
+</dl>
+
+<h3>Trademarks</h3>
+Solaris, Java and all Java-based marks are trademarks or registered 
+trademarks of Sun Microsystems, Inc. in the United States and
+other countries. We are independent of 
+Sun Microsystems, Inc.<p>
+
+Microsoft Windows is registered trademark of
+Microsoft Corporation in the United States and/or other countries.<p>
+
+<HR width="100%">
+<table width="100%" cellpadding=0><tbody>
+<tr>
+  <td align=left valign=top>
+  <a href="http://www.ethz.ch/homepage_en.html">ETH Home</A>
+  </td>
+  <td align=center>July 2001<br>
+    <a href="responsible.html">Responsible</A>
+   </td>
+  <td align=right>
+    <img src="ethlogo-140.gif" alt="ETH Logo"><br>
+  </td>
+</tr>
+</tbody></table>
+</BODY></HTML>

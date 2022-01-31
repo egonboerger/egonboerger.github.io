@@ -1,0 +1,390 @@
+# list of recent publications
+# possible attributes:
+# - year
+# - title
+# - co_authors
+# - venue (some arbitrary text withouth pages and year)
+# - pages
+# - url (the title will be a hyperlink)
+# - comment
+# - to_appear (true|false)  (default: false)  (if true, shows: "to appear in:")
+# - final (true|false)      (default: true)  (if true, shows: "final version in: ")
+
+- title: "A Characterization of Distributed ASMs with Partial-order Runs"
+  year: 2020
+  co_authors: "Klaus-Dieter Schewe"
+  venue: "LNCS 12071"
+  pages: "79-92"
+  url: /Papers/Methodology/BoergerScheweABZ20.pdf
+  
+- title: "Modeling Companion for Software Practitioners"
+  year: 2018
+  co_authors: "Alexander Raschke"
+  venue: "Springer-Verlag"
+  url: "http://modelingbook.informatik.uni-ulm.de/"
+  comment: "[Book-Website](https://modelingbook.informatik.uni-ulm.de)"
+  final: false
+
+- title: "Serialisable Multi-Level Transaction Control: A Specification and Verification"
+  year: 2016
+  co_authors: "K.-D. Schewe and Q. Wang"
+  venue: "Science of Computer Programming 131"
+  pages: "42-85"
+  url: /Papers/MultiLevelTransactionAsm.pdf
+
+- title: "Modeling distributed algorithms by ASMs compared to Petri nets"
+  year: 2016
+  venue: "Proc.ABZ2016 in Springer LNCS 9675"
+  pages: 3-34
+  url: /Papers/Asm2EventB2016.pdf
+
+- title: "Why Programming Must be Supported by Modeling and How?"
+  year: 2018
+  venue: Proc.Isola 18, Springer LNCS 11244
+  pages: 89-110
+  url: /Papers/Methodology/Modeling4Pgg.pdf
+
+- title: "Recursive ASM Thesis"
+  year: 2020
+  co_authors: "Klaus-Dieter Schewe"
+  venue: Fundamenta Informaticae 177.1
+  pages: 1-37
+  url: /Papers/Methodology/RecAlgsFI2020.pdf
+
+- title: "A compact encoding of sequential ASMs in Event-B"
+  year: 2016
+  co_authors: Michael Leuschel
+  venue: Proc. ABZ 2016 in Springer LNCS 9675
+  pages: 119-134
+  url: /Papers/Asm2EventB2016.pdf
+
+- title:  Concurrent ASM Runs
+  year: 2015
+  co_authors: Klaus-Dieter Schewe
+  venue: Acta Informatica 53 (5)
+  pages: 469-492
+  url: /Papers/Methodology/ConcurAsm.pdf
+  comment: "Listed as Notable Article in: [ACM 21th Annual BEST OF COMPUTING](https://www.computingreviews.com/recommend/bestof/notableitems.cfm?bestYear=2016)"
+
+- title: Modeling for Change via component-based decomposition and ASM refinement
+  year: 2015
+  co_authors: Simone Zenzaro
+  venue: Proc. S-BPM ONE 2015 (ACM Digital Library) ISBN 978-1-4503-3312-2
+  url: /Papers/SwEngg/EventAtm.pdf
+  comment: An illustration of modeling with ASMs by the ATM case study
+
+- title:  Abstract State Machine Nets. Closing the Gap between Business Process Models and their Implementation   
+  year: 2015
+  co_authors: Albert Fleischmann
+  venue: Proc. S-BPM ONE 2015 (ACM Digital Library) ISBN 978-1-4503-3312-2 
+  url: /Papers/Bpmn/AsmNets.pdf
+ 
+- title: An Abstract Transaction Operator Serializing Concurrent Program Executions                                            
+  year: 2014
+  co_authors: K.-D. Schewe
+  venue:  Proc. ABZ'14 Conference, Springer LNCS 8477
+  pages: 142-157
+  url: /Papers/TransactionAsm.pdf
+ 
+- title: Modeling web applications infrastructure with ASMs
+  year: 2014
+  co_authors: V. Gervasi and A. Cisternino
+  venue: "Science of Computer Programming 94 (2)"
+  pages: "69-92 (Special ABZ'2012 Issue)"
+  url: /Papers/SwEngg/WebApplInfrastructureSCP14.pdf
+ 
+- title: Modular Design and Analysis of Programming Languages
+  year: 2013
+  venue: "Journal of Logic and Computation (Leitsch Festschrift)"
+  comment: "[Slides](/Talks/Cambridge13Talk.pdf) of Invited Lecture at Workshop on Scalable Language Specification at Microsoft Research Cambridge, June 25-27, 2013"
+  url: /Papers/Cambridge13.pdf
+
+- title: Rigorous Analysis of Web Application Frameworks
+  year: 2012
+  co_authors: A. Cisternino and V. Gervasi
+  venue: Proc. [iFM&ABZ 2012](http://ifm.isti.cnr.it/) Springer LNCS 7316 and LNCS 7321
+  pages: 1-20
+  url: /Papers/SwEngg/WebApplModel.pdf
+
+- title: "The S-BPM and the ASM Method: A Comparison"
+  year: 2012
+  venue: Thalheim Festschrift, Springer LNCS 7260
+  pages: 52-72
+  comment: and in Proc. S-BPM 2012 (Springer LN Business Information Processing 104)
+  url: /Papers/Bpmn/SBpmVsAsm.pdf
+ 
+- title: Approaches to Modeling Business Processes. A Critical Analysis of BPMN, Workflow Patterns and YAWL
+  year: 2011
+  venue: J.Software & Systems Modeling (DOI 10.1007/s10270-011-0214-z) 
+  comment: See my [answer](/Papers/Bpmn/CommentingEvalBpmReaction.pdf) to the published reaction from two of the YAWL and WorkflowPattern authors
+  url: /Papers/Bpmn/EvalBpm.pdf
+
+- title: Ambient Abstract State Machines with Applications
+  year: 2011
+  co_authors: A. Cisternino and V. Gervasi
+  venue: J.CSS 78 (3)
+  pages: 939-959 
+  comment: (Special Issue in honor of Amir Pnueli) http://dx.doi.org/10.1016/j.jcss.2011.08.004
+  url: /Papers/AmbientAsm.pdf
+
+- title: A Subject-Oriented Interpreter Model for S-BPM
+  year: 2011
+  venue: "[Appendix](/Papers/Bpmn/SbpmBookAppendix.pdf) in A. Fleischmann, W. Schmidt, C. Stary, S. Obermeier, E. Boerger: Subject-Oriented Business Process Management. Springer [Open Access Book](http://www.springer.com/978-3-642-32391-1)."
+  comment: Engl. translation of German `Subjektorientiertes Prozessmanagement'. Hanser-Verlag, Muenchen, 2011.
+
+- title: "BPMN 2.0 Core Modeling Concepts: Inheritance-Based Execution Semantics"
+  year: 2011
+  co_authors: O. Soerensen
+  venue: Handbook of Conceptual Modeling (Eds. D.Embley, B. Thalheim), Springer
+  pages: 287-332
+  url: /Papers/Bpmn/bpmn10.pdf
+
+- title: Applicable Formal Methods
+  year: 2011
+  co_authors: J. Bowen, M. Butler, M. Poppleton
+  venue: Special Issue of FORMAL ASPECTS OF COMPUTING 23:1-2
+  comment: DOI 10.1007/s00165-010-0168-x 
+
+- title: An Abstract State Machine Model for the Generic Java Type System
+  year: 2010
+  co_authors: Daniel Grunwald, Malte Lochau, Ursula Goltz
+  venue: TR 2010-02 TU Braunschweig 
+  url: /Papers/Java-JVM/JavaBraunschweigTR-2010-02.pdf
+
+- title: Synchronous Message Passing and Semaphores
+  year: 2010
+  co_authors: I. Craig
+  venue: Proc. ABZ 2010 (Springer LNCS 5977)
+  url: /Papers/SyncMsgSema.pdf
+
+- title: "The ASM Method: An Exposition" 
+  year: 2010
+  venue: "P. Boca, J. Bowen, J. Siddiqi (Eds): Formal Methods: State of the Art and New Directions. Springer."
+  url: /Papers/Methodology/BcsFacs07.pdf
+
+- title: Modeling an OS Kernel Draft
+  year: 2009
+  co_authors: I. Craig
+  venue: "V. Diekert, K. Weicker, N. Weicker (Eds): Informatik als Dialog zwischen Theorie und  Anwendung. 
+         Festschrift fuer Volker Claus zum 65.Geburtstag. Vieweg+Teubner,  Wiesbaden 2009, ISBN 978-3-8348-0824-0"
+  url: /Papers/OsKernelModel.pdf
+ 
+- title: Concurrent ASMs and +CAL Draft
+  year: 2009
+  co_authors: M. Altenhofen
+  venue: Springer LNCS 5486
+  pages: 1-17
+  url: /Papers/Methodology/ConcurrentAsms.pdf
+
+- title: Advances in Software Engineering
+  year: 2008
+  venue: Eds. E. Boerger and A. Cisternino, Springer LNCS 5316
+  url: /Papers/LipariBook08.pdf.pdf
+
+- title: Abstract State Machines, B and Z
+  year: 2008
+  venue: Proc. ABZ'08 Conference, London (Eds. E.Boerger, P. Boca, M. Butler, J. Bowen) Springer LNCS 5238
+  url: http://www.springeronline.com/978-3-540-87602-1
+
+- title: Abstract State Machines 2007
+  year: 2008
+  venue: J. of Universal Computer Science Special ASM Issue J.UCS 12.14
+  comment: Selected Papers from ASM’2007 (Grimstadt, Norway) (Eds. E.Boerger and A. Prinz) 
+  url: http://www.jucs.org/jucs_14_12
+
+- title: "Modularizing Theorems for Software Product Lines: The JBook Case Study"
+  year: 2008
+  co_authors: D. Batory
+  venue: "[J. Universal Computer Science 14 (12)](http://www.jucs.org/jucs_14_12)"
+  url: http://www.jucs.org/jucs_14_12/modularizing_theorems_for_software
+
+- title: Interpreter Model for BPMN 1.0 Standard 
+  year: 2008
+  co_authors: B. Thalheim
+  venue: Springer LNCS 5316
+  url: /Papers/Bpmn/Bpmn08Lipari.pdf
+
+- title: Semantics of OR-Joins
+  year: 2008
+  co_authors: O. Soerensen and B. Thalheim
+  venue: J.Universal Computer Science
+  url: /Papers/Bpmn/OrJoinJucs08.pdf
+
+- title: Applying the ASM Method to Web Services, Workflows, Business Processes and Interaction Patterns
+  year: 2008
+  co_authors: B. Thalheim
+  venue: Proc. ABZ 2008 (Springer LNCS 5238)
+  url: /Papers/Bpmn/BpmnAbz08.pdf
+
+- title: Linking the Meaning of Programs to What the Compiler Can Verify
+  year: 2008
+  venue: "Verified Software: Theories, Tools, Experiments. Proc. IFIP Working Conference (Zuerich, Oct.10-13, 2005), LNCS 4171"
+  pages: 325-336
+  url: /Papers/Methodology/VerifCompilZH.pdf
+ 
+- title: High-Level Models for Workflow Patterns
+  year: 2007
+  venue: Proc.ASM’07, [revised](/Papers/SwEngg/ClassifyWorkflowPattern.pdf) in Proc.ER’07 (LNCS 4801) 
+  pages: 1-20
+  url: /Papers/SwEngg/WorkflowPattern.pdf
+
+- title: ASM Special Issue of Fundamenta Informatica 77 (1-2) 2007
+  year: 2007
+  venue: "Selected Papers from ASM’2005 (Paris, France). [Contents](/Papers/Miscellaneous/FundInfContents.pdf) [Editorial](/Papers/Miscellaneous/FundInfIntro.pdf) by E.Boerger and A. Slissenko"
+
+- title: A High-Level Specification for Virtual Providers
+  year: 2006
+  co_authors: M. Altenhofen, A. Friesen, J. Lemcke
+  venue: International J. Of Business Process Management and Integration Vol.1 Issue 4 
+  pages: 267-278
+  url: /Papers/SwEngg/VP_IJBPIM.pdf
+
+- title: ASMs and Hoare’s Verified Software Challenge
+  year: 2006
+  venue:  Formal Aspects of Computing Journal
+  url: /Papers/Methodology/VstteFacJ06.pdf
+
+- title: Modeling the .NET CLR Exception Handling Mechanism for a Mathematical Analysis
+  year: 2006
+  co_authors: N.G. Fruja
+  venue: J. of Object Technology JOT 3.5 
+  pages: 5-34
+  url: /Papers/CSharp/ClrExcJOT06.pdf
+ 
+- title: Framework for Service Interaction Patterns and Interaction Flows
+  year: 2005
+  venue: Proc. ICFEM 2005. Springer LNCS 3785
+  pages: 5-35
+  url: /Papers/SwEngg/InteractionPattern.pdf
+
+- title: Abstract Model for Process Mediation
+  year: 2005
+  venue: Proc. ICFEM 2005. Springer LNCS 3785 
+  pages: 81-95
+  comment: "See extended version \"A High-Level Specification for Virtual Providers\" in [IJBPMI’06](/Papers/SwEngg/VP_IJBPIM.pdf)"
+  url: /Papers/SwEngg/VPManchester.pdf
+
+- title: Unifying View of Models of Computation and System Design Frameworks
+  year: 2005
+  venue: Annals of Pure and Applied Logic vol.133
+  pages: 149-171
+  url: /Papers/Methodology/UnivCompMod.pdf
+
+- title: The ASM Method. A Tutorial Introduction
+  year: 2005
+  venue: Springer LNAI Vol. 3717
+  pages: 264-283
+  url: /Papers/Methodology/Tutorial05.pdf
+
+- title: ASM Special Issue of TCS 336 (2005)
+  year: 2005
+  comment: "Selected Papers from ASM’2003 (Taormina, Sicily) [Editorial](/Papers/Miscellaneous/Tcs05Editorial.pdf)"
+
+- title: "ASM Ground Model Method: Foundation for Requirements Engineering"
+  year: 2004
+  venue: Springer LNCS 2772 ISBN 3-540-21002-4, ISSN 0302-9743
+  pages: 146-161
+  url: /Papers/Methodology/GroundModMethod.pdf
+
+- title: Linking Architectural and Component Level System Views
+  year: 2004
+  venue: Christoph Grimm (Ed.), Languages for System Specification and Verification, CHDL Series, Kluwer, Chapter 16
+  pages: 247-269
+  url: /Papers/Methodology/LinkArchComp.pdf
+
+- title: On formalizing UML State Machines using ASMs
+  year: 2004
+  venue: Information and Software Technology Vol.46, n.5
+  pages: 287-292
+  url: /Papers/SwEngg/UmlStMachine.pdf
+
+- title: Reuse of ASM Specifications (Java/C# case study)
+  year: 2004
+  venue: Proc.FMCO’03, Springer LNCS 3188 
+  pages: 42-76
+  url: /Papers/CSharp/JavaCsharp.pdf
+
+- title: Mathematical Model for Semantics of C#
+  year: 2004
+  venue: Theoretical Computer Science 336
+  pages: 235-284
+  url: /Papers/CSharp/CSharpSemant.pdf
+ 
+- title: ASM Specification of C# Threads & the .NET Memory Model
+  year: 2004
+  venue:  Proc. ASM’04, Springer LNCS 3065
+  pages: 226-249
+  url: /Papers/CSharp/CsharpThread.pdf
+
+- title: Principles of Computation, Programming & System Design and Analysis   
+  year: 2004
+  venue: Proc. TFM’04, Springer LNCS 3294
+  pages: 65-84
+  url: /Papers/Miscellaneous/ComPggThy04.pdf
+
+- title: Abstract State Machines (AsmBook)
+  year: 2003
+  co_authors: R. Staerk
+  venue: Springer-Verlag
+  url: /AsmBook
+  final: false
+
+- title: The ASM Refinement Method
+  year: 2003
+  venue: Formal Aspects of Computing, ISSN 0934-5043, 15
+  pages: 237-257
+  url: /Papers/Methodology/RefineFACS.pdf
+
+- title: The ASM Ground Model Method
+  year: 2003
+  venue: Springer LNCS 2772
+  url: /Papers/Methodology/GroundModMethod.pdf
+
+- title: Abstract State Machines 2003. Advances in Theory and Practice   
+  year: 2003
+  venue: Proc. of 10th International ASM Workshop ASM2003 (Taormina, Sicily) LNCS 2589 (Eds. E.Boerger, A. Gargantini, E. Riccobene)
+  url: http://www.springer.com/computer/foundations/book/978-3-540-00624-4
+
+- title: ASM Survey 1984-2001 with an annotated bibliography of over 300 items.
+  year: 2002
+  comment: For an update at the end of 2002  (with 440 items) see Chapter 9  in the [AsmBook](/AsmBook). 
+  url: http://www.jucs.org/jucs_8_1
+
+- title: "JBook: Java and the Java Virtual Machine — Definition, Verification, Validation"
+  year: 2001
+  co_authors: . Staerk and J. Schmid
+  venue: Springer-Verlag
+  final: false
+  url: /jbook/
+
+- title: "Abstract State Machines 2001: New Developments and Applications"
+  year: 2001
+  venue: J. of Universal Computer Science Special Issue [J.UCS 7.11](http://www.jucs.org/jucs_7_11)
+  comment: Selected Papers from ASM’2001 (GranCanaria, Spain) (Eds. E.Boerger and U. Glaesser)
+
+
+- title: "Architecture Book: Architecture Design and Validation Methods"
+  venue: Springer-Verlag
+  comment: With contributions by R.Camposano and A.Seawright and J.Buck, G.DeMicheli,  R.H.J.M.Otten,  H.-J.Wunderlich, H.Eveking, L.Lavagna and A.Sangiovanni-Vincentelli and E.M.Sentovich,  E.Boerger and W.Schulte
+  year: 2000
+ 
+- title: Composition of ASMs (Turbo ASMs)
+  year: 2000
+  co_authors: J. Schmid
+  venue: Springer LNCS 1862
+  url: /Papers/Methodology/ComposingASMs.pdf
+
+- title: Why ASMs?
+  year: 1995
+  venue: Springer LNCS 1012
+  url: /Papers/Methodology/WhyAsm95.pdf
+
+- title: High-Level System Design and Analysis
+  year: 1999 
+  venue: Springer LNCS 1641
+  url: /Papers/Methodology/HighLevelDesign99.PDF
+
+- title: Tribute to Dean Rosenzweig 
+  year: 2007
+  url: /Papers/Miscellaneous/TributeToDeanRosenzweig.pdf
+  final: false

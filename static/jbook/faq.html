@@ -1,0 +1,379 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+                      "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML><HEAD>
+ <TITLE>Jbook FAQ</TITLE>
+ <link rel=stylesheet type="text/css" href="website.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<hr WIDTH="100%">
+<i>Java and the Java Virtual Machine
+  (<A HREF="http://www.inf.ethz.ch/personal/staerk/">R. St&auml;rk</A>,
+   <A HREF="http://www.tydo.de">J. Schmid</A>,
+   <A HREF="../index.html">E. B&ouml;rger</A>)
+</i>
+<hr WIDTH="100%">
+
+<H1>
+Jbook Frequently Asked Questions and Answers
+</H1>
+
+We list the questions by increasing page numbers. Click on
+the page number to jump to the corresponding answer.
+<table><tbody>
+ <tr>
+   <th align=Left>Page(s)</th>
+   <th align=Left>Problem</th>
+  </tr>
+
+
+ <tr>
+  <td valign=top><a href="faq.html#Fig3.1and3.3">35, 42</a></td>
+  <td><b>Figure 3.1</b> and <b>Figure 3.3</b>:
+     Labels can appear anywhere. Thus, the function <i>up</i>
+     and sub-statements must be clearly defined.
+  </td>
+ </tr>
+
+
+ <tr>
+  <td valign=top><a href="faq.html#40">40</a></td>
+  <td>What is the meaning of <i>restbody</i>[<i>result</i>/<i>up(pos)</i>]?
+  </td>
+ </tr>
+
+
+ <tr>
+  <td valign=top><a href="faq.html#42-43">42, 43</a></td>
+  <td>How is <i>Abr</i> propagated upward in 
+      <tt>if</tt> and <tt>while</i> statements?
+  </td>
+ </tr>
+
+
+ <tr>
+  <td valign=top><a href="faq.html#44">44</a></td>
+  <td>Are the reductions for assignment operators on page 44
+      valid for arbitrary lvalues?
+  </td>
+ </tr>
+
+
+ <tr>
+  <td valign=top><a href="faq.html#50">50</a></td>
+  <td>The introduction states that <i>Java<sub>C</sub></i> uses
+      only static features, but <b>Section 4.1.2</b> introduces
+      non-static features (i.e. instance features).
+  </td>
+ </tr>
+
+
+ <tr>
+  <td valign=top><a href="faq.html#52">52</a></td>
+  <td><b>Item 1</b> and <b>Item 2</b>: Same sentence
+      "Let <i>app(alpha)</i> be the set ... such that" is
+      confusing.
+  </td>
+ </tr>
+
+ <tr>
+  <td valign=top><a href="faq.html#61-65">61-65</a></td>
+  <td>The function <i>body</i> must update the nullary global <i>body</i>.
+  </td>
+ </tr>
+
+ <tr>
+  <td valign=top><a href="faq.html#64">64</a></td>
+  <td>Is there a need for primitive constant definitions?
+  </td>
+ </tr>
+
+
+ <tr>
+  <td valign=top><a href="faq.html#65">65</a></td>
+  <td><i>invokeMethod</i> need <i>invokeNative</i> which is defined
+     in <i>Java<sub>T</sub></i>.
+  </td>
+ </tr>
+
+
+ <tr>
+  <td valign=top><a href="faq.html#79">79</a></td>
+  <td>Declaration of <i>defaultVal</i> and <i>type</i> already used in
+      the definition of <i>initialize</i> on <b>Page 64</b>.
+  </td>
+ </tr>
+
+
+ <tr>
+  <td valign=top><a href="faq.html#239">239</a></td>
+  <td>The phrase "The verify type <tt>unusable</tt> is allowed ...
+      but not as the type of a register" is in 
+      <b>Definition 16.3.8</b>. Why not prefixed by <tt>T9</tt>?
+      Where does this restriction come from?
+  </td>
+ </tr>
+
+
+ <tr>
+  <td valign=top><a href="faq.html#242">242</a></td>
+  <td>The page states that "A compiler for Java, however, 
+     had to use more local
+     registers for storing return values and for storing 
+     exceptions in default handlers." Why?
+  </td>
+ </tr>
+
+
+ </tbody>
+</table><p>
+
+<H3>Answers</H3>
+
+
+<dl>
+ <dt><b><a name="Fig3.1and3.3">Page 35</b> and <b>Page 42</a></b> 
+     (<b>Figure 3.1</b> and <b>Figure 3.3</b>):
+     Labels can appear anywhere. Thus, the function <i>up</i>
+     and substatements must be clearly defined.
+ <p>
+ </dt>
+ <dd>A labeled statement <i>lab: stm</i> is represented in the
+     abstract syntax tree as a node with label <i>lab</i> which
+     has exactly one child, the abstract syntax tree for <i>stm</i>. The
+     function <i>up</i> returns the parent position. Substatements are
+     subtrees.
+ <p>
+ </dd>
+
+
+ <dt><b><a name="40">Page 40</a></b>:
+     What is the meaning of <i>restbody</i>[<i>result</i>/<i>up(pos)</i>]?
+ <p>
+ </dt>
+ <dd>We have defined it as the result of replacing in <i>restbody</i>
+     the subtree at position <i>up(pos)</i> by <i>result</i>.
+ <p>
+ </dd>
+
+
+ <dt><b><a name="42-43">Page 42</b> and <b>Page 43</b>:</a>
+      How is <i>Abr</i> propagated upward in 
+      <tt>if</tt> and <tt>while</tt> statements?
+ <p>
+ </dt>
+ <dd>These cases are covered by the case <i>phrase(-&gt; abr)</i>
+     in <b>Figure 3.3</b>,
+     because <tt>if</tt> and <tt>while</tt> statements 
+     propagate abruptions (see function <i>propagateAbr</i>).
+ <p>
+ </dd>
+
+
+ <dt><b><a name="44">Page 44</b>:</a>
+      Are the reductions for assignment operators on page 44
+      valid for arbitrary lvalues?
+ <p>
+ </dt>
+ <dd>No. The reductions of assignment operators in page 44 as well as
+   the reductions of pre-increment and pre-decrement expressions in
+   Table 3.6 are valid only for local variables. The reductions
+   cannot be applied to array access expressions 
+   and field access expressions. Cases like
+   <tt>++exp1[exp2]</tt>, <tt>exp1[exp2] += exp3</tt>,
+   <tt>++exp.field</tt>, <tt>exp1.field += exp2</tt> require
+   their own ASM rules.
+ <p>
+ </dd>
+
+
+ <dt><b><a name="50">Page 50</a></b>:
+     The introduction states that <i>Java<sub>C</sub></i> uses
+      only static features, but <b>Section 4.1.2</b> introduces
+      non-static features (i.e. instance features).
+ <p>
+ </dt>
+ <dd>From the point of view of presentation, we found it more
+     economic to formulate the syntactic constraints for 
+     <i>Java<sub>C</sub></i> and <i>Java<sub>O</sub></i> in
+     one blow. However, the dynamic semantics for <i>Java<sub>C</sub></i>
+     does not have non-static features.
+ <p>
+ </dd>
+
+
+ <dt><b><a name="52">Page 52</a></b>:
+ </dt><b>Item 1</b> and <b>Item 2</b>: Same sentence
+      "Let <i>app(alpha)</i> be the set ... such that" is
+      confusing.
+ <p>
+ </dt>
+ <dd><b>Item 1</b> and <b>Item 2</b> refer to the two different
+     kinds of method invocations (at the bottom of <b>Page 58</b>).
+ <p>
+ </dd>
+
+
+ <dt><b><a name="61-65">Page 61-65</a></b>:
+   The function <i>body</i> must update the nullary global <i>body</i>.
+ <p>
+ </dt>
+ <dd>
+   The function <i>body</i> is a static function, it is never
+   updated. Given a method signature, it provides the code
+   for the method. We assume for <i>Java<sub>I</sub></i>
+   that there is some (hidden) methond <tt>main</tt> and
+   <i>body(</i><tt>main</tt><i>)</i> returns the code of
+   the <i>Java<sub>I</sub></i> program.
+ <p>
+ </dd>
+
+
+ <dt><b><a name="64">Page 64</a></b>:
+     Is there a need for <i>primitive constant</i> definitions?
+ <p>
+ </dt>
+ <dd>
+     Yes. <i>Primitive constants</i> are inlined by the compiler. Hence,
+     they do not trigger class initialization. However, the
+     Java Language Specification does not cover the case
+     of <i>recursive</i> definitions of final static fields.
+ <p>
+ </dd>
+
+ <dt><b><a name="65">Page 65</a></b>:
+     <i>invokeMethod</i> need <i>invokeNative</i> which is defined
+     in <i>Java<sub>T</sub></i>.
+ <p>
+ </dt>
+ <dd>
+    Right. We assume that each of 
+    <i>Java<sub>C</sub></i>, <i>Java<sub>O</sub></i>,
+    <i>Java<sub>E</sub></i>, <i>Java<sub>T</sub></i> has its
+    own <i>invokeNative</i>. Only the <i>invokeNative</i> of
+    <i>Java<sub>T</sub></i> is displayed in the book (for
+    thread methods).
+ <p>
+ </dd>
+
+
+ <dt><b><a name="79">Page 79</a></b>:
+   Declaration of <i>defaultVal</i> and <i>type</i> already used in
+   the definition of <i>initialize</i> on <b>Page 64</b>.
+ <p>
+ </dt>
+ <dd>
+  True, but on <b>Page 64</b> we did not want to break the flow
+  of explanations by the definitions of <i>defaultVal</i>
+  and <i>type</i>. This happens in various places and is the
+  reason why in the index one finds a reference to the definition
+  of such terms. ;-)
+ <p>
+ </dd>
+
+ <dt><b><a name="239">Page 239</a></b>:
+     The phrase "The verify type <tt>unusable</tt> is allowed ...
+      but not as the type of a register" is in 
+      <b>Definition 16.3.8</b>. Why not prefixed by <tt>T9</tt>?
+      Where does this restriction come from?
+ <p>
+ </dt>
+ <dd>
+   The instructions <i>Load</i> and <i>Store</i> can move 
+   uninitialized objects, see <b>Definition 15.4.1</b> on
+   <b>Page 216</b> which says that every verify type is
+   less or equal than <tt>unusable</tt>. If we would
+   allow the type <tt>unusable</tt> in registers, we had to
+   change the definition of the relation <i>&lt;<sub>reg</sub></i>
+   on <b>Page 222</b>. The reason that we work with partial
+   functions <i>regT</i> is that also the function <i>reg</i>
+   of the <i>trustful VM</i> is partial. The <i>defensive VM</i>
+   extracts from <i>reg</i> the types of the registers and 
+   obtains a partial function <i>regT</i>.
+ <p>
+ </dd>
+
+
+
+ <dt><b><a name="242">Page 242</a></b>:
+     The page states that "A compiler for Java, however, 
+     had to use more local
+     registers for storing return values and for storing 
+     exceptions in default handlers." Why?
+ <p>
+ </dt>
+ <dd>
+   More precisely, a compiler had to use more local registers in
+   general as illustrated in the following Java program:
+   <pre>
+<tt>public class</tt> Test {
+
+ <tt>public static void</tt> main(String[] argv) {
+   m(true);
+ }
+
+ <tt>public static void</tt> m(<tt>boolean</tt> b) {
+     <tt>try</tt> {
+         <tt>int</tt> j, k, l;
+         <tt>try</tt> {
+             <tt>if</tt> (b) <tt>return</tt>;
+             j = 1;
+             k = 2;
+             l = 3;
+         } <tt>finally</tt> { <i>// Subroutine <b>S</b></i>
+             <tt>if</tt> (b) <tt>return</tt>;
+         }
+         <tt>if</tt> (j==1) <tt>return</tt>;
+         <tt>if</tt> (k==2) <tt>return</tt>;
+         <tt>if</tt> (l==3) <tt>return</tt>;
+     } <tt>finally</tt> {     <i>// Subroutine <b>T</b></i>
+         <tt>if</tt> (b) <tt>return</tt>;
+         Object o = <tt>new</tt> Object();
+     }
+ }
+}
+   </pre>
+ <p>
+ The Jbook-Compiler uses for the variables <i>l</i> and 
+ <i>o</i> the same register number in the bytecode. This is
+ legal, because the variables are defined in disjoint scopes.
+ Obviously, variable <i>o</i> is modified in subroutine <tt>T</tt> and
+ therefore <i>o</i> is in the set <i>mod(T)</i>. Since
+ subroutine <tt>S</tt> calls subroutine <tt>T</tt> (due to the
+ return statement), the variable <i>o</i> is also in the
+ set <i>mod(S)</i> by <b>Item 2</b> of the modified definition
+ of the inductive <i>mod</i>. Since variable <i>l</i> uses the
+ same register number as variable <i>o</i>, the
+ bytecode verifier thinks, that <i>l</i> is modified by the
+ subroutine <tt>S</tt> which is obviously not the case. In fact,
+ the Jbook-Verifier with the inductive definition for <i>mod</i>
+ as described on <b>Page 239</b>
+ would reject this program compiled with the Jbook-Compiler. Hence,
+ for this example, a compiler must use different register numbers
+ for <i>l</i> and <i>o</i>.<br>
+ The Sun Java Compiler (in JDK 1.3, e.g.) already uses more local
+ register numbers. Therefore, one has to use the Jbook-Compiler
+ (which uses less register numbers) to reproduce the problem.
+ </dd>
+
+ 
+
+</dl>
+
+
+<A HREF="index.html">Home</A><br><br>
+<HR width="100%">
+<table width="100%" cellpadding=0><tbody>
+<tr>
+  <td align=left valign=top>
+  <a href="http://www.ethz.ch/homepage_en.html">ETH Home</A>
+  </td>
+  <td align=center>August 2001<br>
+    <a href="responsible.html">Responsible</A>
+   </td>
+  <td align=right>
+    <img src="ethlogo-140.gif" alt="ETH Logo"><br>
+  </td>
+</tr>
+</tbody></table>
+</BODY></HTML>

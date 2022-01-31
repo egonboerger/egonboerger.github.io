@@ -1,0 +1,77 @@
+theme = "boerger"
+
+day_night = false
+
+font = "minimal"
+
+font_size = "M"
+
+site_type = "Personal"
+
+local_business_type = ""
+
+disableKinds = ["author","publication"]
+
+description = "This is the personal website of Egon Börger"
+
+highlight = true
+highlight_languages = ["r"]  # support for highlighting additional languages
+highlight_style = "github"  # https://cdnjs.com/libraries/highlight.js/
+
+math = true
+
+diagram = false
+
+privacy_pack = false # cookie consent and anonymize IP
+
+favicon = "/img/favicon.ico"
+logo = "/img/cheru.gif"
+
+email = "egon.boerger@gmail.com"
+
+phone = ""
+
+# https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+address = { street = "", city = "Pisa", region = "", postcode = "", country = "Italy", country_code = "IT" }
+
+date_format = "2006"
+
+time_format = "15:04"
+
+address_format = "de"
+
+main_menu = {align = "l", show_logo = true}
+
+reading_time = false
+
+section_pager = false
+
+docs_section_pager = true
+
+abstract_length = 135
+
+plugins_js  = [ # /assets/js/<NAME>.js
+# "NAME"
+]
+
+
+[avatar]
+  gravatar = true
+
+  shape = "circle"
+  # shape = "square"
+
+[publications]
+  date_format = "2006"
+
+  citation_style = "apa"
+
+[comments]
+  engine = 0 # disabled
+  commentable = {page = false, post = false, docs = false, project = false, publication = false, talk = false}
+
+[search]
+  engine = 0 # disabled
+
+[cms]
+  netlify_cms = false

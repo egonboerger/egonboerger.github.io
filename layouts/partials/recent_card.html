@@ -1,0 +1,56 @@
+{{ $item := . }}
+
+{{ $years := slice }}
+{{ range .Site.Data.publications }}
+    {{ $years = $years | append .year }}
+{{ end }}
+{{ $years = uniq $years }}
+
+{{ range sort $years "value" "desc" }}
+  {{ $year := . }}
+  <div class="row" style="background-color:#fafafa; padding: 10px 0;">
+    <div class="col-12 col-lg-2 section-heading">
+      <h1>{{ with $year }}{{ . | markdownify | emojify }}{{ end }}</h1>
+    </div>
+
+    <div class="col-12 col-lg-10">
+      {{ range where $.Site.Data.publications "year" $year }}
+        <div class="card-simple clearfix">
+          <h3 class="article-title mb-1 mt-1">
+            <a href="{{ .url }}">{{ .title | markdownify }}</a>
+          </h3>
+          {{ if (.co_authors) }}
+            (with {{ .co_authors }})<br/>
+          {{ end }}
+
+          {{ $to_appear := false }}
+          {{ $final := true }}
+          {{ if (.to_appear) }}
+            {{ $to_appear = .to_appear }}
+          {{ end }}
+          {{ if isset . "final" }}
+            {{ $final = .final }}
+          {{ end }}
+
+          {{ if (eq ($to_appear) true) }}
+              to appear in: 
+          {{ else if (eq $final true) }}
+              final version in: 
+          {{ end }}
+          {{ if (.venue) }}
+            {{ .venue | markdownify | emojify }} ({{ .year}})
+          {{ end }}
+          {{ if (.pages) }}
+            pp. {{.pages | markdownify | emojify }}
+          {{ end }}
+          <br/>
+          {{ .comment | markdownify | emojify }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+  <div style="padding: 20px 0px 0px 0px;"></div>
+{{ end }}
+
+
+

@@ -1,0 +1,18 @@
+
+{{ $photo  := .page.Params.photo }}
+{{ $width  := .page.Params.width }}
+
+<div class="universal-wrapper">
+  <div class="row">
+    <div class="col">
+      <img class="float-left" src="{{ $photo }}" width="{{ $width }}" style="margin-right:20px;margin-bottom:20px"/>
+         <h1>{{ .page.Params.name }}</h1>
+         <h2>{{ .page.Params.affiliation1 }}</h2>
+         <h2>{{ .page.Params.affiliation2 }}</h2>
+         <h3>{{ .page.Params.email }}</h3>
+    </div>
+  </div>
+  <div class="row">
+      {{ .page.Content }}
+  </div>
+</div>
