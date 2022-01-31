@@ -1,12 +1,10 @@
-# =egonboerger.github.io=: Egon Börger's private homepage
-
-#+options: toc:nil
+# ``egonboerger.github.io``: Egon Börger's private homepage
 
 This website is built with [hugo](https://gohugo.io/) and uses the [academic theme](https://github.com/wowchemy/starter-hugo-academic) from [wowchemy](https://wowchemy.com/)
 
-- The sources can be found in =.github/src/=
+- The sources can be found in the [``main``](/tree/main) branch
 
-- The root directory contains the generated website (should not be modified by hand because the next generation process will overwrite it!).
+- The root directory of the [``gh-pages``](/tree/gh-pages) branch contains the generated website (should not be modified by hand because the next generation process will overwrite it!).
 
 
 ## License
