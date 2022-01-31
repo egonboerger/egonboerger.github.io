@@ -2,9 +2,9 @@
 
 This website is built with [hugo](https://gohugo.io/) and uses the [academic theme](https://github.com/wowchemy/starter-hugo-academic) from [wowchemy](https://wowchemy.com/)
 
-- The sources can be found in the [``main``](egonboerger.github.io/tree/main) branch
+- The sources can be found in the [``main``](https://github.com/egonboerger/egonboerger.github.io/tree/main) branch
 
-- The root directory of the [``gh-pages``](egonboerger.github.io/tree/gh-pages) branch contains the generated website (should not be modified by hand because the next generation process will overwrite it!).
+- The root directory of the [``gh-pages``](https://github.com/egonboerger/egonboerger.github.io/tree/gh-pages) branch contains the generated website (should not be modified by hand because the next generation process will overwrite it!).
 
 
 ## License
