@@ -9,13 +9,12 @@ width: 350px
 
 name: Prof. Dr. Egon Börger
 affiliation1: Dipartimento di Informatica
-affiliation2: Università die Pisa (Italy)
+affiliation2: Università di Pisa (Italy)
 
 email: egon.boerger@gmail.com
 ---
 - [Tribute](/Curriculum/Tribute2021.pdf) in [FestschriftAt75](/img/2021Festschrift.jpg) 
 - [Laudatio](/LaudatioABZ2016.pdf) at ABZ2016
-- iFM&ABZ [Festkolloquium](https://ifm.isti.cnr.it/) 2012
 - [Portrait](/Curriculum/PortraitOfEgonBoerger.pdf) in [FestschriftAt60](/Papers/Lncs5115Intro.pdf)
 
 <p></p>
