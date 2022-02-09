@@ -10,6 +10,13 @@
 # - to_appear (true|false)  (default: false)  (if true, shows: "to appear in:")
 # - final (true|false)      (default: true)  (if true, shows: "final version in: ")
 
+- title: "Logic and Machines: Turing Tradition of the Logic School of Muenster"
+  year: 2022
+  co_authors: "Klaus-Dieter Schewe"
+  venue: "Newsletter of the Formal Aspects of Computing Science Specialist Group of the Britisch Computer Society"
+  pages: "69-129"
+  url: /Papers/TuringTradMS.pdf
+  
 - title: "A Characterization of Distributed ASMs with Partial-order Runs"
   year: 2020
   co_authors: "Klaus-Dieter Schewe"
