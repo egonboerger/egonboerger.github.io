@@ -30,3 +30,4 @@ email: egon.boerger@gmail.com
 - Scientific [Genealogy](/GenealogyEB.pdf)
 - [Rückblick 2017](https://austria-forum.org/af/Wissenssammlungen/Essays/Kulturwandel_durch_Technik/boerger)
 - [Retrospective 2017](/Retrospective2017English.pdf)
+- [Turing Tradition in Münster](/Papers/TuringTradMS.pdf)
