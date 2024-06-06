@@ -1,5 +1,6 @@
 ---
 title: Computability, Complexity, Logic
+subtitle: Translation of "Berechenbarkeit, Komplexität, Logik" (1985, 1986, 1992)
 
 authors:
 - Egon Börger
