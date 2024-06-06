@@ -20,7 +20,7 @@ Most of the papers are also listed in the [Trier bibliography](http://www.inform
 - [Talks](/Curriculum/talks.pdf)
 
 ## CV
-1. [one slide pdf](/Curriculum/IntroEB2014.pdf)
+1. [one slide pdf](/Curriculum/OneSlideCV.pdf)
 2. [short Curriculum vitae ed studiorum](/Curriculum/cv.pdf)
 3. [long CV with publications and talks](/Curriculum/cvPubl.pdf)
 
