@@ -10,7 +10,7 @@ weight: 30
 content:
   page_type: "publication"
 
-  count: 3
+  count: 4
   offset: 0
 
   order: "desc"
