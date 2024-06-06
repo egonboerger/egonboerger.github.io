@@ -28,5 +28,5 @@ email: egon.boerger@gmail.com
 - [OneSlideCV](/Curriculum/OneSlideCV.pdf)
 - [List of Books](/BookList.pdf)
 - Scientific [Genealogy](/GenealogyEB.pdf)
-- [Hat Informatik mit Logik zu tun?](https://austria-forum.org/af/Wissenssammlungen/Essays/Kulturwandel_durch_Technik/boerger)
-- [A Personal Retrospective](/Curriculum/EBVitaInformaticaAustriaForum2017English.docx)
+- [Rückblick 2017](https://austria-forum.org/af/Wissenssammlungen/Essays/Kulturwandel_durch_Technik/boerger)
+- [Retrospective 2017](/Retrospective2017English.pdf)
