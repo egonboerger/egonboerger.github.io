@@ -25,7 +25,8 @@ email: egon.boerger@gmail.com
 
 <p></p>
 
-- [OneSlideCV](/Curriculum/OneSlideCV.pdf)
+- [CVOneSlide](/Curriculum/CVOneSlide.pdf)
+- [Curriculum Studiorum](/Curriculum/CurriculumStudiorum.pdf)
 - [List of Books](/BookList/BookList.jpg)
 - Scientific [Genealogy](/GenealogyEB.pdf)
 - [Rückblick 2017](https://austria-forum.org/af/Wissenssammlungen/Essays/Kulturwandel_durch_Technik/boerger)
